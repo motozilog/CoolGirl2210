@@ -17,7 +17,7 @@ Upgrades:
 
 6. Resistors: Changed from 0402x4 chip resistor arrays to 0603x4 for easier DIY assembly.
 
-7. Level Shifters: Changed from a single SN74ALVC164245 to two SN74LVC8T245s for easier DIY assembly.
+7. Level Shifters: Changed from a single SN74ALVC164245 to two SN74LVC8T245 for easier DIY assembly.
 
 8. Assembly: All optional components are placed on the bottom layer, allowing for SMT assembly on the top layer only.
 
