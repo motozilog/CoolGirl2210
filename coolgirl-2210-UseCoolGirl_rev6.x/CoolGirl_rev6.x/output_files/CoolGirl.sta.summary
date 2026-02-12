@@ -1,0 +1,49 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'm2'
+Slack : -17.582
+TNS   : -6465.865
+
+Type  : Setup 'ppu_addr_in[12]'
+Slack : -9.783
+TNS   : -161.930
+
+Type  : Setup 'ppu_rd_in'
+Slack : -7.418
+TNS   : -102.226
+
+Type  : Hold 'm2'
+Slack : 1.078
+TNS   : 0.000
+
+Type  : Hold 'ppu_rd_in'
+Slack : 1.650
+TNS   : 0.000
+
+Type  : Hold 'ppu_addr_in[12]'
+Slack : 2.060
+TNS   : 0.000
+
+Type  : Recovery 'm2'
+Slack : -4.795
+TNS   : -8.307
+
+Type  : Removal 'm2'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'm2'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'ppu_addr_in[12]'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'ppu_rd_in'
+Slack : -2.289
+TNS   : -2.289
+
+------------------------------------------------------------

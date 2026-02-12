@@ -1,0 +1,11 @@
+Fitter Status : Successful - Sun Jan 11 17:56:51 2026
+Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+Revision Name : CoolGirl
+Top-level Entity Name : CoolGirl
+Family : MAX II
+Device : EPM2210F256C5
+Timing Models : Final
+Total logic elements : 2,061 / 2,210 ( 93 % )
+Total pins : 78 / 204 ( 38 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

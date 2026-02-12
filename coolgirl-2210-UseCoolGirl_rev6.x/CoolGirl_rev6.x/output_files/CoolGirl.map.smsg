@@ -1,0 +1,3 @@
+Warning (10268): Verilog HDL information at CoolGirl_mappers.vh(280): always construct contains both blocking and non-blocking assignments File: D:/coolgirl-2210/coolgirl-2210bak/coolgirl-famicom-multicart-master/CoolGirl_mappers.vh Line: 280
+Warning (10268): Verilog HDL information at CoolGirl_mappers.vh(1407): always construct contains both blocking and non-blocking assignments File: D:/coolgirl-2210/coolgirl-2210bak/coolgirl-famicom-multicart-master/CoolGirl_mappers.vh Line: 1407
+Warning (10268): Verilog HDL information at CoolGirl_mappers.vh(1472): always construct contains both blocking and non-blocking assignments File: D:/coolgirl-2210/coolgirl-2210bak/coolgirl-famicom-multicart-master/CoolGirl_mappers.vh Line: 1472

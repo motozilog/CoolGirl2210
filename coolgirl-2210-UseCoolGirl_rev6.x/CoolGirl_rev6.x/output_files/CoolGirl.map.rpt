@@ -1,0 +1,513 @@
+Analysis & Synthesis report for CoolGirl
+Sun Jan 11 17:56:40 2026
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |CoolGirl
+ 13. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 14. lpm_mult Parameter Settings by Entity Instance
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++-----------------------------+------------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sun Jan 11 17:56:40 2026          ;
+; Quartus Prime Version       ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name               ; CoolGirl                                       ;
+; Top-level Entity Name       ; CoolGirl                                       ;
+; Family                      ; MAX II                                         ;
+; Total logic elements        ; 2,160                                          ;
+; Total pins                  ; 78                                             ;
+; Total virtual pins          ; 0                                              ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                                  ;
++-----------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EPM2210F256C5      ;                    ;
+; Top-level entity name                                            ; CoolGirl           ; CoolGirl           ;
+; Family name                                                      ; MAX II             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                            ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                        ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+; ../CoolGirl_mappers.vh           ; yes             ; User Unspecified File        ; D:/coolgirl-2210/coolgirl-2210bak/coolgirl-famicom-multicart-master/CoolGirl_mappers.vh             ;         ;
+; ../CoolGirl_config.vh            ; yes             ; User Unspecified File        ; D:/coolgirl-2210/coolgirl-2210bak/coolgirl-famicom-multicart-master/CoolGirl_config.vh              ;         ;
+; CoolGirl.v                       ; yes             ; User Verilog HDL File        ; D:/coolgirl-2210/coolgirl-2210bak/coolgirl-famicom-multicart-master/CoolGirl_rev6.x/CoolGirl.v      ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_mult.tdf                              ;         ;
+; aglobal221.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc                            ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_add_sub.inc                           ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/multcore.inc                              ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/bypassff.inc                              ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altshift.inc                              ;         ;
+; db/mult_hos.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/coolgirl-2210/coolgirl-2210bak/coolgirl-famicom-multicart-master/CoolGirl_rev6.x/db/mult_hos.tdf ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 2160  ;
+;     -- Combinational with no register       ; 1613  ;
+;     -- Register only                        ; 203   ;
+;     -- Combinational with a register        ; 344   ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 1184  ;
+;     -- 3 input functions                    ; 413   ;
+;     -- 2 input functions                    ; 317   ;
+;     -- 1 input functions                    ; 41    ;
+;     -- 0 input functions                    ; 2     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 1954  ;
+;     -- arithmetic mode                      ; 206   ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 122   ;
+;     -- asynchronous clear/load mode         ; 7     ;
+;                                             ;       ;
+; Total registers                             ; 547   ;
+; Total logic cells in carry chains           ; 228   ;
+; I/O pins                                    ; 78    ;
+; Maximum fan-out node                        ; m2    ;
+; Maximum fan-out                             ; 512   ;
+; Total fan-out                               ; 8119  ;
+; Average fan-out                             ; 3.63  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                  ;
++---------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node      ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                              ; Entity Name ; Library Name ;
++---------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------+-------------+--------------+
+; |CoolGirl                       ; 2160 (2056) ; 547          ; 0          ; 78   ; 0            ; 1613 (1509)  ; 203 (203)         ; 344 (344)        ; 228 (173)       ; 0 (0)      ; |CoolGirl                                        ; CoolGirl    ; work         ;
+;    |lpm_mult:Mult0|             ; 104 (0)     ; 0            ; 0          ; 0    ; 0            ; 104 (0)      ; 0 (0)             ; 0 (0)            ; 55 (0)          ; 0 (0)      ; |CoolGirl|lpm_mult:Mult0                         ; lpm_mult    ; work         ;
+;       |mult_hos:auto_generated| ; 104 (104)   ; 0            ; 0          ; 0    ; 0            ; 104 (104)    ; 0 (0)             ; 0 (0)            ; 55 (55)         ; 0 (0)      ; |CoolGirl|lpm_mult:Mult0|mult_hos:auto_generated ; mult_hos    ; work         ;
++---------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; chr_bank_h[8]                         ; Stuck at GND due to stuck port data_in ;
+; chr_bank_f[8]                         ; Stuck at GND due to stuck port data_in ;
+; chr_bank_d[8]                         ; Stuck at GND due to stuck port data_in ;
+; chr_bank_b[8]                         ; Stuck at GND due to stuck port data_in ;
+; prg_bank_d[6,7]                       ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 6 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 547   ;
+; Number of registers using Synchronous Clear  ; 95    ;
+; Number of registers using Synchronous Load   ; 45    ;
+; Number of registers using Asynchronous Clear ; 6     ;
+; Number of registers using Asynchronous Load  ; 1     ;
+; Number of registers using Clock Enable       ; 478   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; prg_bank_b[0]                           ; 2       ;
+; prg_bank_d[0]                           ; 1       ;
+; prg_bank_c[1]                           ; 1       ;
+; prg_bank_d[1]                           ; 1       ;
+; prg_bank_d[2]                           ; 1       ;
+; prg_bank_c[2]                           ; 1       ;
+; prg_bank_d[3]                           ; 1       ;
+; prg_bank_c[3]                           ; 1       ;
+; prg_mask[17]                            ; 1       ;
+; prg_bank_d[4]                           ; 1       ;
+; prg_bank_c[4]                           ; 2       ;
+; prg_mask[18]                            ; 1       ;
+; prg_bank_d[5]                           ; 2       ;
+; prg_bank_c[5]                           ; 2       ;
+; prg_mask[19]                            ; 1       ;
+; prg_bank_c[6]                           ; 1       ;
+; prg_mask[20]                            ; 1       ;
+; prg_bank_c[7]                           ; 1       ;
+; chr_bank_d[1]                           ; 1       ;
+; chr_bank_c[1]                           ; 3       ;
+; chr_bank_g[1]                           ; 2       ;
+; chr_bank_h[1]                           ; 1       ;
+; chr_bank_f[0]                           ; 2       ;
+; chr_bank_h[0]                           ; 1       ;
+; chr_bank_b[0]                           ; 2       ;
+; chr_bank_d[0]                           ; 1       ;
+; chr_bank_e[2]                           ; 4       ;
+; chr_bank_f[2]                           ; 3       ;
+; chr_bank_h[2]                           ; 1       ;
+; chr_bank_g[2]                           ; 2       ;
+; new_dendy_init[3]                       ; 5       ;
+; new_dendy_init[2]                       ; 5       ;
+; new_dendy_init[0]                       ; 5       ;
+; new_dendy_init[1]                       ; 5       ;
+; new_dendy_init_a13h[0]                  ; 3       ;
+; new_dendy_init_a13h[1]                  ; 3       ;
+; new_dendy_init_a13l[0]                  ; 3       ;
+; new_dendy_init_a13l[1]                  ; 3       ;
+; Total number of inverted registers = 38 ;         ;
++-----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |CoolGirl|reset_state[0]                ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |CoolGirl|controller_data[4]            ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |CoolGirl|mmc1_load_register[3]         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |CoolGirl|scanline[3]                   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |CoolGirl|mapper67_irq_counter[6]       ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |CoolGirl|mapper67_irq_counter[14]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |CoolGirl|mapper83_irq_counter[15]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |CoolGirl|mapper83_irq_counter[5]       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |CoolGirl|mapper18_irq_value[3]         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |CoolGirl|mapper69_irq_value[1]         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |CoolGirl|mapper69_irq_value[10]        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |CoolGirl|mapper65_irq_value[14]        ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |CoolGirl|mapper18_irq_value[6]         ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |CoolGirl|mapper18_irq_value[11]        ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |CoolGirl|mapper18_irq_value[15]        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |CoolGirl|mmc3_irq_latch[0]             ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |CoolGirl|vrc4_irq_value[1]             ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |CoolGirl|vrc4_irq_prescaler[6]         ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |CoolGirl|vrc4_irq_prescaler_counter[1] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |CoolGirl|prg_bank_6000[4]              ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 15 LEs               ; 30 LEs                 ; Yes        ; |CoolGirl|mapper42_irq_value[9]         ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |CoolGirl|vrc3_irq_value[13]            ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |CoolGirl|vrc3_irq_value[1]             ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |CoolGirl|prg_bank_6000[2]              ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; Yes        ; |CoolGirl|prg_bank_a[7]                 ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 8 LEs                ; 6 LEs                  ; Yes        ; |CoolGirl|prg_bank_b[7]                 ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |CoolGirl|chr_bank_d[5]                 ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 2 LEs                ; 12 LEs                 ; Yes        ; |CoolGirl|chr_bank_d[2]                 ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |CoolGirl|chr_bank_b[5]                 ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |CoolGirl|chr_bank_b[3]                 ;
+; 14:1               ; 4 bits    ; 36 LEs        ; 8 LEs                ; 28 LEs                 ; Yes        ; |CoolGirl|chr_bank_h[5]                 ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |CoolGirl|chr_bank_f[5]                 ;
+; 16:1               ; 3 bits    ; 30 LEs        ; 9 LEs                ; 21 LEs                 ; Yes        ; |CoolGirl|chr_bank_c[5]                 ;
+; 16:1               ; 3 bits    ; 30 LEs        ; 9 LEs                ; 21 LEs                 ; Yes        ; |CoolGirl|chr_bank_g[5]                 ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; Yes        ; |CoolGirl|chr_bank_c[2]                 ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |CoolGirl|prg_bank_b[2]                 ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |CoolGirl|prg_bank_d[0]                 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |CoolGirl|prg_bank_c[7]                 ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 2 LEs                ; 12 LEs                 ; Yes        ; |CoolGirl|chr_bank_d[0]                 ;
+; 14:1               ; 3 bits    ; 27 LEs        ; 3 LEs                ; 24 LEs                 ; Yes        ; |CoolGirl|chr_bank_h[2]                 ;
+; 13:1               ; 3 bits    ; 24 LEs        ; 9 LEs                ; 15 LEs                 ; Yes        ; |CoolGirl|prg_bank_c[1]                 ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; Yes        ; |CoolGirl|chr_bank_g[2]                 ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |CoolGirl|vrc_2b_hi                     ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; No         ; |CoolGirl|prg_addr_mapped[20]           ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 12 LEs               ; 16 LEs                 ; No         ; |CoolGirl|prg_addr_mapped[15]           ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |CoolGirl|cpu_data_out[3]               ;
+; 14:1               ; 5 bits    ; 45 LEs        ; 25 LEs               ; 20 LEs                 ; No         ; |CoolGirl|comb                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |CoolGirl ;
++--------------------------------+----------+------------------------------+
+; Parameter Name                 ; Value    ; Type                         ;
++--------------------------------+----------+------------------------------+
+; ENABLE_MAPPER_005              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_009_010          ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_011              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_018              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_021_022_023_025  ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_022              ; 1        ; Signed Integer               ;
+; ENABLE_VRC4_INTERRUPTS         ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_030              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_032              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_033_048          ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_048_INTERRUPTS   ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_034_BNROM        ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_036              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_038              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_042              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_042_INTERRUPTS   ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_065              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_066              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_067              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_069              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_070_152          ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_071              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_073              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_075              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_078              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_079_146          ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_083              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_087              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_089              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_090              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_090_ACCURATE_IRQ ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_090_MULTIPLIER   ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_093              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_097              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_112              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_118              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_133              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_163              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_184              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_189              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_206              ; 1        ; Signed Integer               ;
+; ENABLE_MAPPER_228              ; 1        ; Signed Integer               ;
+; ENABLE_FOUR_SCREEN             ; 1        ; Signed Integer               ;
+; UxROM_BITSIZE                  ; 4        ; Signed Integer               ;
+; AxROM_BxROM_BITSIZE            ; 3        ; Signed Integer               ;
+; MMC3_BITSIZE                   ; 8        ; Signed Integer               ;
+; RESET_COMBINATION              ; 11010010 ; Unsigned Binary              ;
++--------------------------------+----------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                 ;
++------------------------------------------------+----------+---------------------+
+; Parameter Name                                 ; Value    ; Type                ;
++------------------------------------------------+----------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 8        ; Untyped             ;
+; LPM_WIDTHB                                     ; 8        ; Untyped             ;
+; LPM_WIDTHP                                     ; 16       ; Untyped             ;
+; LPM_WIDTHR                                     ; 16       ; Untyped             ;
+; LPM_WIDTHS                                     ; 1        ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped             ;
+; LPM_PIPELINE                                   ; 0        ; Untyped             ;
+; LATENCY                                        ; 0        ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped             ;
+; USE_EAB                                        ; OFF      ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped             ;
+; DEVICE_FAMILY                                  ; MAX II   ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_hos ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped             ;
++------------------------------------------------+----------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance         ;
++---------------------------------------+----------------+
+; Name                                  ; Value          ;
++---------------------------------------+----------------+
+; Number of entity instances            ; 1              ;
+; Entity Instance                       ; lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 8              ;
+;     -- LPM_WIDTHB                     ; 8              ;
+;     -- LPM_WIDTHP                     ; 16             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
++---------------------------------------+----------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+    Info: Processing started: Sun Jan 11 17:56:17 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CoolGirl -c CoolGirl
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file coolgirl.v
+    Info (12023): Found entity 1: CoolGirl File: D:/coolgirl-2210/coolgirl-2210bak/coolgirl-famicom-multicart-master/CoolGirl_rev6.x/CoolGirl.v Line: 5
+Info (12127): Elaborating entity "CoolGirl" for the top level hierarchy
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: D:/coolgirl-2210/coolgirl-2210bak/coolgirl-famicom-multicart-master/CoolGirl_mappers.vh Line: 35
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0" File: D:/coolgirl-2210/coolgirl-2210bak/coolgirl-famicom-multicart-master/CoolGirl_mappers.vh Line: 35
+Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter: File: D:/coolgirl-2210/coolgirl-2210bak/coolgirl-famicom-multicart-master/CoolGirl_mappers.vh Line: 35
+    Info (12134): Parameter "LPM_WIDTHA" = "8"
+    Info (12134): Parameter "LPM_WIDTHB" = "8"
+    Info (12134): Parameter "LPM_WIDTHP" = "16"
+    Info (12134): Parameter "LPM_WIDTHR" = "16"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_hos.tdf
+    Info (12023): Found entity 1: mult_hos File: D:/coolgirl-2210/coolgirl-2210bak/coolgirl-famicom-multicart-master/CoolGirl_rev6.x/db/mult_hos.tdf Line: 29
+Info (13014): Ignored 140 buffer(s)
+    Info (13019): Ignored 140 SOFT buffer(s)
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "cpu_shifers_oe" is stuck at GND File: D:/coolgirl-2210/coolgirl-2210bak/coolgirl-famicom-multicart-master/CoolGirl_rev6.x/CoolGirl.v Line: 16
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "lpm_mult:Mult0|mult_hos:auto_generated|le3a[9]" File: D:/coolgirl-2210/coolgirl-2210bak/coolgirl-famicom-multicart-master/CoolGirl_rev6.x/db/mult_hos.tdf Line: 43
+    Info (17048): Logic cell "lpm_mult:Mult0|mult_hos:auto_generated|le5a[9]" File: D:/coolgirl-2210/coolgirl-2210bak/coolgirl-famicom-multicart-master/CoolGirl_rev6.x/db/mult_hos.tdf Line: 45
+    Info (17048): Logic cell "lpm_mult:Mult0|mult_hos:auto_generated|le6a[9]" File: D:/coolgirl-2210/coolgirl-2210bak/coolgirl-famicom-multicart-master/CoolGirl_rev6.x/db/mult_hos.tdf Line: 46
+    Info (17048): Logic cell "lpm_mult:Mult0|mult_hos:auto_generated|le7a[8]" File: D:/coolgirl-2210/coolgirl-2210bak/coolgirl-famicom-multicart-master/CoolGirl_rev6.x/db/mult_hos.tdf Line: 47
+    Info (17048): Logic cell "lpm_mult:Mult0|mult_hos:auto_generated|le4a[9]" File: D:/coolgirl-2210/coolgirl-2210bak/coolgirl-famicom-multicart-master/CoolGirl_rev6.x/db/mult_hos.tdf Line: 44
+Info (21057): Implemented 2238 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 31 input pins
+    Info (21059): Implemented 38 output pins
+    Info (21060): Implemented 9 bidirectional pins
+    Info (21061): Implemented 2160 logic cells
+Info (144001): Generated suppressed messages file D:/coolgirl-2210/coolgirl-2210bak/coolgirl-famicom-multicart-master/CoolGirl_rev6.x/output_files/CoolGirl.map.smsg
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4726 megabytes
+    Info: Processing ended: Sun Jan 11 17:56:40 2026
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:33
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/coolgirl-2210/coolgirl-2210bak/coolgirl-famicom-multicart-master/CoolGirl_rev6.x/output_files/CoolGirl.map.smsg.
+
+

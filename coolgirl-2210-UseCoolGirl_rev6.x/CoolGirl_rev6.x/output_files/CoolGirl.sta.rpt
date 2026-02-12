@@ -1,0 +1,1221 @@
+Timing Analyzer report for CoolGirl
+Sun Jan 11 17:56:56 2026
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'm2'
+ 12. Setup: 'ppu_addr_in[12]'
+ 13. Setup: 'ppu_rd_in'
+ 14. Hold: 'm2'
+ 15. Hold: 'ppu_rd_in'
+ 16. Hold: 'ppu_addr_in[12]'
+ 17. Recovery: 'm2'
+ 18. Removal: 'm2'
+ 19. Setup Transfers
+ 20. Hold Transfers
+ 21. Recovery Transfers
+ 22. Removal Transfers
+ 23. Report TCCS
+ 24. Report RSKM
+ 25. Unconstrained Paths Summary
+ 26. Clock Status Summary
+ 27. Unconstrained Input Ports
+ 28. Unconstrained Output Ports
+ 29. Unconstrained Input Ports
+ 30. Unconstrained Output Ports
+ 31. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                        ;
++-----------------------+--------------------------------------------------------+
+; Quartus Prime Version ; Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                                 ;
+; Revision Name         ; CoolGirl                                               ;
+; Device Family         ; MAX II                                                 ;
+; Device Name           ; EPM2210F256C5                                          ;
+; Timing Models         ; Final                                                  ;
+; Delay Model           ; Slow Model                                             ;
+; Rise/Fall Delays      ; Unavailable                                            ;
++-----------------------+--------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                           ;
++-----------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------+
+; Clock Name      ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets             ;
++-----------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------+
+; m2              ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { m2 }              ;
+; ppu_addr_in[12] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { ppu_addr_in[12] } ;
+; ppu_rd_in       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { ppu_rd_in }       ;
++-----------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------+
+
+
++-------------------------------------------------------+
+; Fmax Summary                                          ;
++------------+-----------------+-----------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name      ; Note ;
++------------+-----------------+-----------------+------+
+; 53.82 MHz  ; 53.82 MHz       ; m2              ;      ;
+; 101.11 MHz ; 101.11 MHz      ; ppu_addr_in[12] ;      ;
+; 118.79 MHz ; 118.79 MHz      ; ppu_rd_in       ;      ;
++------------+-----------------+-----------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------------+
+; Setup Summary                             ;
++-----------------+---------+---------------+
+; Clock           ; Slack   ; End Point TNS ;
++-----------------+---------+---------------+
+; m2              ; -17.582 ; -6465.865     ;
+; ppu_addr_in[12] ; -9.783  ; -161.930      ;
+; ppu_rd_in       ; -7.418  ; -102.226      ;
++-----------------+---------+---------------+
+
+
++-----------------------------------------+
+; Hold Summary                            ;
++-----------------+-------+---------------+
+; Clock           ; Slack ; End Point TNS ;
++-----------------+-------+---------------+
+; m2              ; 1.078 ; 0.000         ;
+; ppu_rd_in       ; 1.650 ; 0.000         ;
+; ppu_addr_in[12] ; 2.060 ; 0.000         ;
++-----------------+-------+---------------+
+
+
++--------------------------------+
+; Recovery Summary               ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; m2    ; -4.795 ; -8.307        ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Removal Summary               ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; m2    ; 0.339 ; 0.000         ;
++-------+-------+---------------+
+
+
++------------------------------------------+
+; Minimum Pulse Width Summary              ;
++-----------------+--------+---------------+
+; Clock           ; Slack  ; End Point TNS ;
++-----------------+--------+---------------+
+; m2              ; -2.289 ; -2.289        ;
+; ppu_addr_in[12] ; -2.289 ; -2.289        ;
+; ppu_rd_in       ; -2.289 ; -2.289        ;
++-----------------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'm2'                                                                                                                 ;
++---------+----------------------+----------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node            ; To Node              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+----------------------+----------------------+--------------+-------------+--------------+------------+------------+
+; -17.582 ; mapper[2]            ; chr_bank_a[6]        ; m2           ; m2          ; 1.000        ; 0.000      ; 18.249     ;
+; -17.406 ; mapper[0]            ; prg_bank_a[3]        ; m2           ; m2          ; 1.000        ; 0.000      ; 18.073     ;
+; -17.401 ; mapper[3]            ; chr_bank_a[6]        ; m2           ; m2          ; 1.000        ; 0.000      ; 18.068     ;
+; -17.216 ; mapper[4]            ; prg_bank_a[3]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.883     ;
+; -17.180 ; mapper[2]            ; chr_bank_a[4]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.847     ;
+; -17.124 ; mapper[0]            ; prg_bank_a[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.791     ;
+; -17.097 ; mapper[3]            ; prg_bank_a[3]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.764     ;
+; -17.094 ; mapper[2]            ; prg_bank_a[3]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.761     ;
+; -17.065 ; mapper[5]            ; chr_bank_a[6]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.732     ;
+; -17.060 ; mapper[0]            ; chr_bank_a[6]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.727     ;
+; -17.012 ; mapper[4]            ; chr_bank_a[6]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.679     ;
+; -16.999 ; mapper[3]            ; chr_bank_a[4]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.666     ;
+; -16.968 ; mapper[0]            ; chr_bank_a[4]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.635     ;
+; -16.934 ; mapper[4]            ; prg_bank_a[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.601     ;
+; -16.930 ; mapper[4]            ; chr_bank_h[1]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.597     ;
+; -16.930 ; mapper[4]            ; chr_bank_h[0]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.597     ;
+; -16.930 ; mapper[4]            ; chr_bank_h[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.597     ;
+; -16.930 ; mapper[1]            ; prg_bank_a[3]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.597     ;
+; -16.812 ; mapper[2]            ; prg_bank_a[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.479     ;
+; -16.752 ; mapper[1]            ; chr_bank_a[6]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.419     ;
+; -16.744 ; mapper[3]            ; prg_bank_a[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.411     ;
+; -16.737 ; mapper[1]            ; chr_bank_a[3]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.404     ;
+; -16.718 ; mapper[1]            ; chr_bank_a[4]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.385     ;
+; -16.702 ; mapper[3]            ; mirroring[0]         ; m2           ; m2          ; 1.000        ; 0.000      ; 17.369     ;
+; -16.663 ; mapper[5]            ; chr_bank_a[4]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.330     ;
+; -16.621 ; mapper[2]            ; chr_bank_a[5]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.288     ;
+; -16.610 ; mapper[4]            ; chr_bank_a[4]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.277     ;
+; -16.606 ; mapper[0]            ; mirroring[0]         ; m2           ; m2          ; 1.000        ; 0.000      ; 17.273     ;
+; -16.598 ; mapper[4]            ; mirroring[0]         ; m2           ; m2          ; 1.000        ; 0.000      ; 17.265     ;
+; -16.577 ; mapper[1]            ; prg_bank_a[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.244     ;
+; -16.563 ; mapper[1]            ; chr_bank_e[3]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.230     ;
+; -16.561 ; mapper[4]            ; chr_bank_d[3]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.228     ;
+; -16.555 ; mapper[5]            ; prg_bank_a[3]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.222     ;
+; -16.536 ; mapper[0]            ; chr_bank_a[5]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.203     ;
+; -16.516 ; mapper[4]            ; chr_bank_a[3]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.183     ;
+; -16.494 ; mapper[3]            ; prg_bank_a[1]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.161     ;
+; -16.420 ; mapper[2]            ; mirroring[0]         ; m2           ; m2          ; 1.000        ; 0.000      ; 17.087     ;
+; -16.416 ; mapper[2]            ; prg_bank_b[4]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.083     ;
+; -16.411 ; mapper[1]            ; chr_bank_h[1]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.078     ;
+; -16.411 ; mapper[1]            ; chr_bank_h[0]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.078     ;
+; -16.411 ; mapper[1]            ; chr_bank_h[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.078     ;
+; -16.408 ; mapper[5]            ; mirroring[0]         ; m2           ; m2          ; 1.000        ; 0.000      ; 17.075     ;
+; -16.385 ; mapper[1]            ; chr_bank_b[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.052     ;
+; -16.385 ; mapper[1]            ; chr_bank_b[3]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.052     ;
+; -16.351 ; mapper[3]            ; chr_bank_a[5]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.018     ;
+; -16.339 ; mapper[1]            ; chr_bank_a[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.006     ;
+; -16.339 ; mapper69_internal[0] ; chr_bank_a[3]        ; m2           ; m2          ; 1.000        ; 0.000      ; 17.006     ;
+; -16.289 ; mapper[1]            ; mirroring[0]         ; m2           ; m2          ; 1.000        ; 0.000      ; 16.956     ;
+; -16.277 ; mapper[5]            ; prg_bank_a[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.944     ;
+; -16.267 ; mapper[1]            ; mapper69_irq_out     ; m2           ; m2          ; 1.000        ; 0.000      ; 16.934     ;
+; -16.266 ; mapper[1]            ; mapper69_irq_enabled ; m2           ; m2          ; 1.000        ; 0.000      ; 16.933     ;
+; -16.237 ; mapper[4]            ; chr_bank_b[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.904     ;
+; -16.237 ; mapper[4]            ; chr_bank_b[3]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.904     ;
+; -16.232 ; mapper[2]            ; chr_bank_h[1]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.899     ;
+; -16.232 ; mapper[2]            ; chr_bank_h[0]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.899     ;
+; -16.232 ; mapper[2]            ; chr_bank_h[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.899     ;
+; -16.185 ; mapper[1]            ; chr_bank_c[4]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.852     ;
+; -16.185 ; mapper[1]            ; chr_bank_c[5]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.852     ;
+; -16.169 ; mapper69_internal[0] ; chr_bank_a[4]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.836     ;
+; -16.164 ; mmc3_internal[1]     ; chr_bank_g[1]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.831     ;
+; -16.164 ; mmc3_internal[1]     ; chr_bank_g[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.831     ;
+; -16.126 ; mapper[2]            ; prg_bank_a[5]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.793     ;
+; -16.118 ; mapper[4]            ; chr_bank_a[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.785     ;
+; -16.105 ; mapper[4]            ; prg_bank_a[1]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.772     ;
+; -16.103 ; mapper[3]            ; chr_bank_h[1]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.770     ;
+; -16.103 ; mapper[3]            ; chr_bank_h[0]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.770     ;
+; -16.103 ; mapper[3]            ; chr_bank_h[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.770     ;
+; -16.090 ; mmc3_internal[1]     ; chr_bank_g[0]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.757     ;
+; -16.087 ; mapper[2]            ; prg_bank_b[1]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.754     ;
+; -16.087 ; mapper[2]            ; prg_bank_b[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.754     ;
+; -16.087 ; mapper[2]            ; prg_bank_b[3]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.754     ;
+; -16.082 ; mapper[5]            ; chr_bank_a[5]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.749     ;
+; -16.057 ; mapper[5]            ; chr_bank_e[3]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.724     ;
+; -16.035 ; mapper[0]            ; chr_bank_a[3]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.702     ;
+; -16.028 ; mmc3_internal[1]     ; chr_bank_g[3]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.695     ;
+; -16.022 ; mapper[1]            ; prg_bank_b[4]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.689     ;
+; -16.000 ; mapper[1]            ; chr_bank_a[5]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.667     ;
+; -15.983 ; mapper[1]            ; chr_bank_g[4]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.650     ;
+; -15.983 ; mapper[1]            ; chr_bank_g[5]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.650     ;
+; -15.983 ; mapper[1]            ; chr_bank_g[6]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.650     ;
+; -15.980 ; mapper[1]            ; chr_bank_g[1]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.647     ;
+; -15.980 ; mapper[1]            ; chr_bank_g[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.647     ;
+; -15.962 ; mapper[4]            ; chr_bank_a[5]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.629     ;
+; -15.941 ; mapper69_internal[0] ; chr_bank_a[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.608     ;
+; -15.931 ; mapper[3]            ; chr_bank_a[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.598     ;
+; -15.917 ; mapper[4]            ; chr_bank_c[4]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.584     ;
+; -15.917 ; mapper[4]            ; chr_bank_c[5]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.584     ;
+; -15.912 ; mapper[3]            ; chr_bank_c[4]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.579     ;
+; -15.912 ; mapper[3]            ; chr_bank_c[5]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.579     ;
+; -15.908 ; mapper[4]            ; chr_bank_d[1]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.575     ;
+; -15.906 ; mapper[1]            ; chr_bank_g[0]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.573     ;
+; -15.889 ; mapper[1]            ; chr_bank_e[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.556     ;
+; -15.885 ; mapper[1]            ; chr_bank_b[1]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.552     ;
+; -15.885 ; mapper[1]            ; chr_bank_b[7]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.552     ;
+; -15.877 ; mapper[5]            ; prg_bank_b[4]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.544     ;
+; -15.863 ; mapper[2]            ; chr_bank_d[3]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.530     ;
+; -15.849 ; flags[2]             ; chr_bank_a[6]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.516     ;
+; -15.844 ; mapper[1]            ; chr_bank_g[3]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.511     ;
+; -15.830 ; mapper[4]            ; chr_bank_d[2]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.497     ;
+; -15.818 ; mapper[2]            ; chr_bank_a[3]        ; m2           ; m2          ; 1.000        ; 0.000      ; 16.485     ;
++---------+----------------------+----------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'ppu_addr_in[12]'                                                                                                                   ;
++--------+---------------------------+--------------------------+-----------------+-----------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                  ; Launch Clock    ; Latch Clock     ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+--------------------------+-----------------+-----------------+--------------+------------+------------+
+; -9.783 ; mapper90_irq_reload       ; mapper90_irq_counter[8]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 10.056     ;
+; -9.301 ; mapper90_irq_reload       ; mapper90_irq_counter[6]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 9.574      ;
+; -9.289 ; mapper90_irq_reload       ; mapper90_irq_counter[10] ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 9.562      ;
+; -9.281 ; mapper90_irq_reload       ; mapper90_irq_counter[9]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 9.554      ;
+; -8.890 ; mapper90_irq_reload_clear ; mapper90_irq_counter[8]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 9.557      ;
+; -8.772 ; mapper90_irq_latch[2]     ; mapper90_irq_counter[8]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 9.045      ;
+; -8.676 ; mapper90_irq_reload       ; mapper90_irq_pending     ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 8.949      ;
+; -8.665 ; mapper90_irq_latch[0]     ; mapper90_irq_counter[8]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 8.938      ;
+; -8.648 ; mapper90_irq_latch[1]     ; mapper90_irq_counter[8]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 8.921      ;
+; -8.590 ; mapper90_irq_reload       ; mapper90_irq_counter[7]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 8.863      ;
+; -8.415 ; mapper90_irq_reload       ; mapper90_irq_counter[4]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 8.688      ;
+; -8.408 ; mapper90_irq_reload_clear ; mapper90_irq_counter[6]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 9.075      ;
+; -8.396 ; mapper90_irq_reload_clear ; mapper90_irq_counter[10] ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 9.063      ;
+; -8.388 ; mapper90_irq_reload_clear ; mapper90_irq_counter[9]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 9.055      ;
+; -8.290 ; mapper90_irq_latch[2]     ; mapper90_irq_counter[6]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 8.563      ;
+; -8.278 ; mapper90_irq_latch[2]     ; mapper90_irq_counter[10] ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 8.551      ;
+; -8.270 ; mapper90_irq_latch[2]     ; mapper90_irq_counter[9]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 8.543      ;
+; -8.250 ; mapper90_irq_reload       ; mapper90_irq_counter[1]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 8.523      ;
+; -8.183 ; mapper90_irq_latch[0]     ; mapper90_irq_counter[6]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 8.456      ;
+; -8.171 ; mapper90_irq_latch[0]     ; mapper90_irq_counter[10] ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 8.444      ;
+; -8.166 ; mapper90_irq_latch[1]     ; mapper90_irq_counter[6]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 8.439      ;
+; -8.164 ; mapper90_irq_latch[3]     ; mapper90_irq_counter[8]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 8.437      ;
+; -8.163 ; mapper90_irq_latch[0]     ; mapper90_irq_counter[9]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 8.436      ;
+; -8.154 ; mapper90_irq_latch[1]     ; mapper90_irq_counter[10] ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 8.427      ;
+; -8.146 ; mapper90_irq_latch[1]     ; mapper90_irq_counter[9]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 8.419      ;
+; -8.113 ; mapper90_irq_latch[4]     ; mapper90_irq_counter[8]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 8.386      ;
+; -8.020 ; mapper90_irq_counter[1]   ; mapper90_irq_counter[8]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 8.687      ;
+; -8.010 ; mapper90_irq_latch[5]     ; mapper90_irq_counter[8]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 8.283      ;
+; -7.874 ; mapper90_irq_counter[4]   ; mapper90_irq_counter[8]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 8.541      ;
+; -7.836 ; mapper90_irq_counter[0]   ; mapper90_irq_counter[8]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 8.503      ;
+; -7.826 ; mapper90_irq_counter[2]   ; mapper90_irq_counter[8]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 8.493      ;
+; -7.783 ; mapper90_irq_reload_clear ; mapper90_irq_pending     ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 8.450      ;
+; -7.759 ; mapper90_irq_reload       ; mapper90_irq_counter[5]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 8.032      ;
+; -7.697 ; mapper90_irq_reload_clear ; mapper90_irq_counter[7]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 8.364      ;
+; -7.682 ; mapper90_irq_latch[3]     ; mapper90_irq_counter[6]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.955      ;
+; -7.670 ; mapper90_irq_latch[3]     ; mapper90_irq_counter[10] ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.943      ;
+; -7.665 ; mapper90_irq_latch[2]     ; mapper90_irq_pending     ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.938      ;
+; -7.662 ; mapper90_irq_latch[3]     ; mapper90_irq_counter[9]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.935      ;
+; -7.638 ; mapper90_irq_counter[3]   ; mapper90_irq_counter[8]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 8.305      ;
+; -7.631 ; mapper90_irq_latch[4]     ; mapper90_irq_counter[6]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.904      ;
+; -7.630 ; mapper90_irq_latch[0]     ; mapper90_irq_counter[4]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.903      ;
+; -7.619 ; mapper90_irq_latch[4]     ; mapper90_irq_counter[10] ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.892      ;
+; -7.611 ; mapper90_irq_latch[4]     ; mapper90_irq_counter[9]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.884      ;
+; -7.607 ; mapper90_irq_latch[0]     ; mapper90_irq_counter[1]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.880      ;
+; -7.579 ; mapper90_irq_latch[2]     ; mapper90_irq_counter[7]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.852      ;
+; -7.558 ; mapper90_irq_latch[0]     ; mapper90_irq_pending     ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.831      ;
+; -7.544 ; mapper90_irq_reload       ; mapper90_irq_counter[2]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.817      ;
+; -7.544 ; mapper90_irq_counter[5]   ; mapper90_irq_counter[8]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 8.211      ;
+; -7.541 ; mapper90_irq_latch[1]     ; mapper90_irq_pending     ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.814      ;
+; -7.538 ; mapper90_irq_counter[1]   ; mapper90_irq_counter[6]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 8.205      ;
+; -7.528 ; mapper90_irq_latch[5]     ; mapper90_irq_counter[6]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.801      ;
+; -7.526 ; mapper90_irq_counter[1]   ; mapper90_irq_counter[10] ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 8.193      ;
+; -7.522 ; mapper90_irq_reload_clear ; mapper90_irq_counter[4]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 8.189      ;
+; -7.518 ; mapper90_irq_counter[1]   ; mapper90_irq_counter[9]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 8.185      ;
+; -7.516 ; mapper90_irq_latch[5]     ; mapper90_irq_counter[10] ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.789      ;
+; -7.508 ; mapper90_irq_latch[5]     ; mapper90_irq_counter[9]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.781      ;
+; -7.472 ; mapper90_irq_latch[0]     ; mapper90_irq_counter[7]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.745      ;
+; -7.462 ; mapper90_irq_latch[7]     ; mapper90_irq_counter[8]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.735      ;
+; -7.455 ; mapper90_irq_latch[1]     ; mapper90_irq_counter[7]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.728      ;
+; -7.435 ; mapper90_irq_enabled      ; mapper90_irq_counter[10] ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.708      ;
+; -7.435 ; mapper90_irq_enabled      ; mapper90_irq_counter[9]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.708      ;
+; -7.435 ; mapper90_irq_enabled      ; mapper90_irq_counter[8]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.708      ;
+; -7.435 ; mapper90_irq_enabled      ; mapper90_irq_counter[7]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.708      ;
+; -7.435 ; mapper90_irq_enabled      ; mapper90_irq_counter[6]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.708      ;
+; -7.404 ; mapper90_irq_latch[2]     ; mapper90_irq_counter[4]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.677      ;
+; -7.392 ; mapper90_irq_counter[4]   ; mapper90_irq_counter[6]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 8.059      ;
+; -7.380 ; mapper90_irq_counter[4]   ; mapper90_irq_counter[10] ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 8.047      ;
+; -7.372 ; mapper90_irq_counter[4]   ; mapper90_irq_counter[9]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 8.039      ;
+; -7.357 ; mapper90_irq_reload_clear ; mapper90_irq_counter[1]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 8.024      ;
+; -7.354 ; mapper90_irq_counter[0]   ; mapper90_irq_counter[6]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 8.021      ;
+; -7.344 ; mapper90_irq_counter[2]   ; mapper90_irq_counter[6]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 8.011      ;
+; -7.342 ; mapper90_irq_counter[0]   ; mapper90_irq_counter[10] ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 8.009      ;
+; -7.334 ; mapper90_irq_counter[0]   ; mapper90_irq_counter[9]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 8.001      ;
+; -7.332 ; mapper90_irq_counter[2]   ; mapper90_irq_counter[10] ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 7.999      ;
+; -7.324 ; mapper90_irq_counter[2]   ; mapper90_irq_counter[9]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 7.991      ;
+; -7.280 ; mapper90_irq_latch[1]     ; mapper90_irq_counter[4]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.553      ;
+; -7.214 ; mapper90_irq_latch[7]     ; mapper90_irq_counter[10] ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.487      ;
+; -7.212 ; mapper90_irq_latch[6]     ; mapper90_irq_counter[8]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.485      ;
+; -7.156 ; mapper90_irq_counter[3]   ; mapper90_irq_counter[6]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 7.823      ;
+; -7.144 ; mapper90_irq_counter[3]   ; mapper90_irq_counter[10] ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 7.811      ;
+; -7.136 ; mapper90_irq_counter[3]   ; mapper90_irq_counter[9]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 7.803      ;
+; -7.127 ; mmc3_irq_counter[5]       ; mmc3_irq_counter[0]      ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 7.794      ;
+; -7.127 ; mmc3_irq_counter[5]       ; mmc3_irq_counter[1]      ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 7.794      ;
+; -7.127 ; mmc3_irq_counter[5]       ; mmc3_irq_counter[4]      ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 7.794      ;
+; -7.127 ; mmc3_irq_counter[5]       ; mmc3_irq_counter[5]      ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 7.794      ;
+; -7.127 ; mmc3_irq_counter[5]       ; mmc3_irq_counter[6]      ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 7.794      ;
+; -7.127 ; mmc3_irq_counter[5]       ; mmc3_irq_counter[7]      ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 7.794      ;
+; -7.127 ; mmc3_irq_counter[5]       ; mmc3_irq_counter[2]      ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 7.794      ;
+; -7.127 ; mmc3_irq_counter[5]       ; mmc3_irq_counter[3]      ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 7.794      ;
+; -7.125 ; mapper90_irq_reload       ; mapper90_irq_counter[3]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.398      ;
+; -7.083 ; mapper90_irq_latch[7]     ; mapper90_irq_counter[9]  ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.356      ;
+; -7.062 ; mapper90_irq_counter[5]   ; mapper90_irq_counter[6]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 7.729      ;
+; -7.057 ; mapper90_irq_latch[3]     ; mapper90_irq_pending     ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.330      ;
+; -7.050 ; mapper90_irq_counter[5]   ; mapper90_irq_counter[10] ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 7.717      ;
+; -7.042 ; mapper90_irq_counter[5]   ; mapper90_irq_counter[9]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 7.709      ;
+; -7.035 ; mapper90_irq_latch[7]     ; mapper90_irq_pending     ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.308      ;
+; -7.006 ; mapper90_irq_latch[4]     ; mapper90_irq_pending     ; m2              ; ppu_addr_in[12] ; 0.500        ; 0.106      ; 7.279      ;
+; -6.988 ; mmc3_irq_counter[7]       ; mmc3_irq_counter[0]      ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 7.655      ;
+; -6.988 ; mmc3_irq_counter[7]       ; mmc3_irq_counter[1]      ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 7.655      ;
+; -6.988 ; mmc3_irq_counter[7]       ; mmc3_irq_counter[4]      ; ppu_addr_in[12] ; ppu_addr_in[12] ; 1.000        ; 0.000      ; 7.655      ;
++--------+---------------------------+--------------------------+-----------------+-----------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'ppu_rd_in'                                                                                                            ;
++--------+----------------------+----------------------+-----------------+-------------+--------------+------------+------------+
+; Slack  ; From Node            ; To Node              ; Launch Clock    ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------+----------------------+-----------------+-------------+--------------+------------+------------+
+; -7.418 ; scanline[0]          ; mmc5_irq_out         ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 8.085      ;
+; -7.091 ; ppu_nt_read_count[0] ; scanline[3]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 7.758      ;
+; -7.091 ; ppu_nt_read_count[0] ; scanline[4]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 7.758      ;
+; -7.091 ; ppu_nt_read_count[0] ; scanline[5]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 7.758      ;
+; -7.091 ; ppu_nt_read_count[0] ; scanline[6]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 7.758      ;
+; -6.954 ; mmc5_irq_line[2]     ; mmc5_irq_out         ; m2              ; ppu_rd_in   ; 1.000        ; 0.106      ; 7.727      ;
+; -6.925 ; scanline[1]          ; mmc5_irq_out         ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 7.592      ;
+; -6.896 ; scanline[0]          ; mapper_163_latch     ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 7.563      ;
+; -6.877 ; mmc5_irq_line[1]     ; mmc5_irq_out         ; m2              ; ppu_rd_in   ; 1.000        ; 0.106      ; 7.650      ;
+; -6.821 ; scanline[3]          ; mmc5_irq_out         ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 7.488      ;
+; -6.820 ; mmc5_irq_line[3]     ; mmc5_irq_out         ; m2              ; ppu_rd_in   ; 1.000        ; 0.106      ; 7.593      ;
+; -6.773 ; scanline[2]          ; mmc5_irq_out         ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 7.440      ;
+; -6.756 ; scanline[4]          ; mmc5_irq_out         ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 7.423      ;
+; -6.703 ; mmc5_irq_line[4]     ; mmc5_irq_out         ; m2              ; ppu_rd_in   ; 1.000        ; 0.106      ; 7.476      ;
+; -6.662 ; mmc5_irq_line[0]     ; mmc5_irq_out         ; m2              ; ppu_rd_in   ; 1.000        ; 0.106      ; 7.435      ;
+; -6.566 ; new_screen_clear     ; mmc5_irq_out         ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 7.233      ;
+; -6.543 ; scanline[6]          ; mmc5_irq_out         ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 7.210      ;
+; -6.474 ; scanline[2]          ; mapper_163_latch     ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 7.141      ;
+; -6.403 ; scanline[1]          ; mapper_163_latch     ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 7.070      ;
+; -6.335 ; ppu_nt_read_count[0] ; scanline[1]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 7.002      ;
+; -6.335 ; ppu_nt_read_count[0] ; scanline[2]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 7.002      ;
+; -6.305 ; scanline[6]          ; mapper_163_latch     ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.972      ;
+; -6.276 ; ppu_nt_read_count[0] ; mmc5_irq_out         ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.943      ;
+; -6.242 ; ppu_nt_read_count[1] ; scanline[3]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.909      ;
+; -6.242 ; ppu_nt_read_count[1] ; scanline[4]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.909      ;
+; -6.242 ; ppu_nt_read_count[1] ; scanline[5]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.909      ;
+; -6.242 ; ppu_nt_read_count[1] ; scanline[6]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.909      ;
+; -6.238 ; scanline[5]          ; mmc5_irq_out         ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.905      ;
+; -5.988 ; mmc5_irq_line[5]     ; mmc5_irq_out         ; m2              ; ppu_rd_in   ; 1.000        ; 0.106      ; 6.761      ;
+; -5.973 ; scanline[3]          ; mapper_163_latch     ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.640      ;
+; -5.952 ; ppu_nt_read_count[0] ; scanline[0]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.619      ;
+; -5.952 ; ppu_nt_read_count[0] ; scanline[7]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.619      ;
+; -5.908 ; scanline[4]          ; mapper_163_latch     ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.575      ;
+; -5.873 ; new_screen           ; mmc5_irq_out         ; m2              ; ppu_rd_in   ; 1.000        ; 0.106      ; 6.646      ;
+; -5.864 ; ppu_nt_read_count[0] ; mapper_163_latch     ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.531      ;
+; -5.695 ; new_screen_clear     ; scanline[3]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.362      ;
+; -5.695 ; new_screen_clear     ; scanline[4]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.362      ;
+; -5.695 ; new_screen_clear     ; scanline[5]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.362      ;
+; -5.695 ; new_screen_clear     ; scanline[6]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.362      ;
+; -5.684 ; scanline[5]          ; mapper_163_latch     ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.351      ;
+; -5.496 ; mmc5_irq_line[6]     ; mmc5_irq_out         ; m2              ; ppu_rd_in   ; 1.000        ; 0.106      ; 6.269      ;
+; -5.486 ; ppu_nt_read_count[1] ; scanline[1]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.153      ;
+; -5.486 ; ppu_nt_read_count[1] ; scanline[2]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.153      ;
+; -5.427 ; ppu_nt_read_count[1] ; mmc5_irq_out         ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.094      ;
+; -5.372 ; scanline[0]          ; scanline[6]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 6.039      ;
+; -5.342 ; mmc5_irq_line[7]     ; mmc5_irq_out         ; m2              ; ppu_rd_in   ; 1.000        ; 0.106      ; 6.115      ;
+; -5.329 ; mmc5_irq_out         ; mmc5_irq_out         ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.996      ;
+; -5.241 ; new_screen           ; scanline[3]          ; m2              ; ppu_rd_in   ; 1.000        ; 0.106      ; 6.014      ;
+; -5.241 ; new_screen           ; scanline[4]          ; m2              ; ppu_rd_in   ; 1.000        ; 0.106      ; 6.014      ;
+; -5.241 ; new_screen           ; scanline[5]          ; m2              ; ppu_rd_in   ; 1.000        ; 0.106      ; 6.014      ;
+; -5.241 ; new_screen           ; scanline[6]          ; m2              ; ppu_rd_in   ; 1.000        ; 0.106      ; 6.014      ;
+; -5.141 ; scanline[7]          ; mmc5_irq_out         ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.808      ;
+; -5.128 ; scanline[0]          ; scanline[7]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.795      ;
+; -5.125 ; scanline[0]          ; scanline[5]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.792      ;
+; -5.103 ; ppu_nt_read_count[1] ; scanline[0]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.770      ;
+; -5.103 ; ppu_nt_read_count[1] ; scanline[7]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.770      ;
+; -5.086 ; scanline[6]          ; scanline[7]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.753      ;
+; -5.015 ; ppu_nt_read_count[1] ; mapper_163_latch     ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.682      ;
+; -5.011 ; mmc5_irq_enabled     ; mmc5_irq_out         ; m2              ; ppu_rd_in   ; 1.000        ; 0.106      ; 5.784      ;
+; -4.998 ; scanline[3]          ; scanline[6]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.665      ;
+; -4.950 ; scanline[2]          ; scanline[6]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.617      ;
+; -4.939 ; new_screen_clear     ; scanline[1]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.606      ;
+; -4.939 ; new_screen_clear     ; scanline[2]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.606      ;
+; -4.933 ; scanline[4]          ; scanline[6]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.600      ;
+; -4.903 ; scanline[7]          ; mapper_163_latch     ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.570      ;
+; -4.881 ; ppu_addr_in[12]      ; scanline[3]          ; ppu_addr_in[12] ; ppu_rd_in   ; 0.500        ; 3.953      ; 9.001      ;
+; -4.881 ; ppu_addr_in[12]      ; scanline[4]          ; ppu_addr_in[12] ; ppu_rd_in   ; 0.500        ; 3.953      ; 9.001      ;
+; -4.881 ; ppu_addr_in[12]      ; scanline[5]          ; ppu_addr_in[12] ; ppu_rd_in   ; 0.500        ; 3.953      ; 9.001      ;
+; -4.881 ; ppu_addr_in[12]      ; scanline[6]          ; ppu_addr_in[12] ; ppu_rd_in   ; 0.500        ; 3.953      ; 9.001      ;
+; -4.879 ; scanline[1]          ; scanline[6]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.546      ;
+; -4.845 ; scanline[0]          ; scanline[3]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.512      ;
+; -4.754 ; scanline[3]          ; scanline[7]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.421      ;
+; -4.751 ; scanline[3]          ; scanline[5]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.418      ;
+; -4.706 ; scanline[2]          ; scanline[7]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.373      ;
+; -4.703 ; scanline[2]          ; scanline[5]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.370      ;
+; -4.689 ; scanline[4]          ; scanline[7]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.356      ;
+; -4.686 ; scanline[4]          ; scanline[5]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.353      ;
+; -4.663 ; scanline[0]          ; scanline[4]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.330      ;
+; -4.635 ; scanline[1]          ; scanline[7]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.302      ;
+; -4.632 ; scanline[1]          ; scanline[5]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.299      ;
+; -4.623 ; new_screen           ; ppu_nt_read_count[1] ; m2              ; ppu_rd_in   ; 1.000        ; 0.106      ; 5.396      ;
+; -4.623 ; new_screen           ; ppu_nt_read_count[0] ; m2              ; ppu_rd_in   ; 1.000        ; 0.106      ; 5.396      ;
+; -4.586 ; scanline[5]          ; scanline[6]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.253      ;
+; -4.556 ; new_screen_clear     ; scanline[0]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.223      ;
+; -4.556 ; new_screen_clear     ; scanline[7]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.223      ;
+; -4.508 ; scanline[6]          ; scanline[6]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.175      ;
+; -4.485 ; new_screen           ; scanline[1]          ; m2              ; ppu_rd_in   ; 1.000        ; 0.106      ; 5.258      ;
+; -4.485 ; new_screen           ; scanline[2]          ; m2              ; ppu_rd_in   ; 1.000        ; 0.106      ; 5.258      ;
+; -4.465 ; scanline[5]          ; scanline[7]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.132      ;
+; -4.423 ; scanline[2]          ; scanline[3]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.090      ;
+; -4.381 ; ppu_addr_in[12]      ; scanline[3]          ; ppu_addr_in[12] ; ppu_rd_in   ; 1.000        ; 3.953      ; 9.001      ;
+; -4.381 ; ppu_addr_in[12]      ; scanline[4]          ; ppu_addr_in[12] ; ppu_rd_in   ; 1.000        ; 3.953      ; 9.001      ;
+; -4.381 ; ppu_addr_in[12]      ; scanline[5]          ; ppu_addr_in[12] ; ppu_rd_in   ; 1.000        ; 3.953      ; 9.001      ;
+; -4.381 ; ppu_addr_in[12]      ; scanline[6]          ; ppu_addr_in[12] ; ppu_rd_in   ; 1.000        ; 3.953      ; 9.001      ;
+; -4.352 ; scanline[1]          ; scanline[3]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 5.019      ;
+; -4.289 ; scanline[3]          ; scanline[4]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 4.956      ;
+; -4.241 ; scanline[2]          ; scanline[4]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 4.908      ;
+; -4.170 ; scanline[1]          ; scanline[4]          ; ppu_rd_in       ; ppu_rd_in   ; 1.000        ; 0.000      ; 4.837      ;
+; -4.125 ; ppu_addr_in[12]      ; scanline[1]          ; ppu_addr_in[12] ; ppu_rd_in   ; 0.500        ; 3.953      ; 8.245      ;
+; -4.125 ; ppu_addr_in[12]      ; scanline[2]          ; ppu_addr_in[12] ; ppu_rd_in   ; 0.500        ; 3.953      ; 8.245      ;
++--------+----------------------+----------------------+-----------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'm2'                                                                                                                                  ;
++-------+-------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                     ; To Node                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.078 ; vrc3_irq_control[1]           ; vrc3_irq_control[1]           ; m2           ; m2          ; 0.000        ; 0.000      ; 1.299      ;
+; 1.078 ; mapper90_irq_enabled          ; mapper90_irq_enabled          ; m2           ; m2          ; 0.000        ; 0.000      ; 1.299      ;
+; 1.078 ; vrc4_irq_control[1]           ; vrc4_irq_control[1]           ; m2           ; m2          ; 0.000        ; 0.000      ; 1.299      ;
+; 1.639 ; mapper83_irq_enabled          ; mapper83_irq_enabled          ; m2           ; m2          ; 0.000        ; 0.000      ; 1.860      ;
+; 1.643 ; vrc4_irq_latch[5]             ; vrc4_irq_value[5]             ; m2           ; m2          ; 0.000        ; 0.000      ; 1.864      ;
+; 1.650 ; vrc3_irq_out                  ; vrc3_irq_out                  ; m2           ; m2          ; 0.000        ; 0.000      ; 1.871      ;
+; 1.660 ; reset_state[0]                ; reset_state[0]                ; m2           ; m2          ; 0.000        ; 0.000      ; 1.881      ;
+; 1.665 ; reset_state[0]                ; reset_state[1]                ; m2           ; m2          ; 0.000        ; 0.000      ; 1.886      ;
+; 1.673 ; controller_data[2]            ; controller_data[3]            ; m2           ; m2          ; 0.000        ; 0.000      ; 1.894      ;
+; 1.674 ; mapper65_irq_latch[8]         ; mapper65_irq_value[8]         ; m2           ; m2          ; 0.000        ; 0.000      ; 1.895      ;
+; 1.677 ; a12_low_time[1]               ; a12_low_time[1]               ; m2           ; m2          ; 0.000        ; 0.000      ; 1.898      ;
+; 1.684 ; controller_data[6]            ; controller_data[7]            ; m2           ; m2          ; 0.000        ; 0.000      ; 1.905      ;
+; 1.688 ; a12_low_time[1]               ; a12_low_time[0]               ; m2           ; m2          ; 0.000        ; 0.000      ; 1.909      ;
+; 1.689 ; controller_data[3]            ; controller_data[4]            ; m2           ; m2          ; 0.000        ; 0.000      ; 1.910      ;
+; 1.713 ; ppu_rd_hi_time[0]             ; ppu_rd_hi_time[0]             ; m2           ; m2          ; 0.000        ; 0.000      ; 1.934      ;
+; 1.715 ; ppu_rd_hi_time[0]             ; ppu_rd_hi_time[3]             ; m2           ; m2          ; 0.000        ; 0.000      ; 1.936      ;
+; 1.715 ; ppu_rd_hi_time[0]             ; ppu_rd_hi_time[2]             ; m2           ; m2          ; 0.000        ; 0.000      ; 1.936      ;
+; 1.724 ; ppu_rd_hi_time[0]             ; ppu_rd_hi_time[1]             ; m2           ; m2          ; 0.000        ; 0.000      ; 1.945      ;
+; 1.733 ; new_dendy_init[1]             ; new_dendy_init[1]             ; m2           ; m2          ; 0.000        ; 0.000      ; 1.954      ;
+; 1.763 ; new_dendy_init[3]             ; new_dendy_init[3]             ; m2           ; m2          ; 0.000        ; 0.000      ; 1.984      ;
+; 1.766 ; vrc3_irq_latch[6]             ; vrc3_irq_value[6]             ; m2           ; m2          ; 0.000        ; 0.000      ; 1.987      ;
+; 1.775 ; new_dendy_init[0]             ; new_dendy_init[0]             ; m2           ; m2          ; 0.000        ; 0.000      ; 1.996      ;
+; 1.778 ; new_dendy_init[3]             ; new_dendy_init[2]             ; m2           ; m2          ; 0.000        ; 0.000      ; 1.999      ;
+; 1.809 ; mapper90_xor[1]               ; mapper90_irq_latch[1]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.030      ;
+; 1.814 ; mapper90_xor[0]               ; mapper90_irq_latch[0]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.035      ;
+; 1.899 ; prg_bank_d[5]                 ; prg_bank_d[5]                 ; m2           ; m2          ; 0.000        ; 0.000      ; 2.120      ;
+; 1.899 ; mapper18_irq_value[3]         ; mapper18_irq_value[3]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.120      ;
+; 1.899 ; mapper18_irq_latch[5]         ; mapper18_irq_value[5]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.120      ;
+; 1.900 ; vrc3_irq_latch[11]            ; vrc3_irq_value[11]            ; m2           ; m2          ; 0.000        ; 0.000      ; 2.121      ;
+; 1.911 ; mapper65_irq_latch[9]         ; mapper65_irq_value[9]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.132      ;
+; 1.919 ; mapper65_irq_latch[13]        ; mapper65_irq_value[13]        ; m2           ; m2          ; 0.000        ; 0.000      ; 2.140      ;
+; 1.920 ; mapper65_irq_latch[14]        ; mapper65_irq_value[14]        ; m2           ; m2          ; 0.000        ; 0.000      ; 2.141      ;
+; 1.920 ; mapper18_irq_value[0]         ; mapper18_irq_value[1]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.141      ;
+; 1.920 ; mapper18_irq_latch[12]        ; mapper18_irq_value[12]        ; m2           ; m2          ; 0.000        ; 0.000      ; 2.141      ;
+; 1.922 ; mapper18_irq_latch[14]        ; mapper18_irq_value[14]        ; m2           ; m2          ; 0.000        ; 0.000      ; 2.143      ;
+; 1.926 ; mapper65_irq_latch[15]        ; mapper65_irq_value[15]        ; m2           ; m2          ; 0.000        ; 0.000      ; 2.147      ;
+; 1.926 ; mapper18_irq_value[2]         ; mapper18_irq_value[2]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.147      ;
+; 1.938 ; a12_low_time[0]               ; a12_low_time[0]               ; m2           ; m2          ; 0.000        ; 0.000      ; 2.159      ;
+; 1.946 ; a12_low_time[0]               ; a12_low_time[1]               ; m2           ; m2          ; 0.000        ; 0.000      ; 2.167      ;
+; 1.955 ; mapper69_counter_enabled      ; carry                         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.176      ;
+; 1.985 ; new_dendy_init[2]             ; new_dendy_init[2]             ; m2           ; m2          ; 0.000        ; 0.000      ; 2.206      ;
+; 1.992 ; new_dendy_init[2]             ; new_dendy_init[1]             ; m2           ; m2          ; 0.000        ; 0.000      ; 2.213      ;
+; 1.994 ; new_dendy_init[2]             ; new_dendy_init[0]             ; m2           ; m2          ; 0.000        ; 0.000      ; 2.215      ;
+; 2.003 ; new_dendy_init[2]             ; new_dendy_init[3]             ; m2           ; m2          ; 0.000        ; 0.000      ; 2.224      ;
+; 2.050 ; mapper90_xor[2]               ; mapper90_irq_latch[2]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.271      ;
+; 2.109 ; mapper65_irq_latch[11]        ; mapper65_irq_value[11]        ; m2           ; m2          ; 0.000        ; 0.000      ; 2.330      ;
+; 2.111 ; vrc4_irq_latch[0]             ; vrc4_irq_value[0]             ; m2           ; m2          ; 0.000        ; 0.000      ; 2.332      ;
+; 2.112 ; vrc4_irq_latch[1]             ; vrc4_irq_value[1]             ; m2           ; m2          ; 0.000        ; 0.000      ; 2.333      ;
+; 2.116 ; mapper42_irq_value[7]         ; mapper42_irq_value[7]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.337      ;
+; 2.117 ; mapper42_irq_value[14]        ; mapper42_irq_value[14]        ; m2           ; m2          ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; mapper42_irq_value[9]         ; mapper42_irq_value[9]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; mapper42_irq_value[8]         ; mapper42_irq_value[8]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.338      ;
+; 2.118 ; mmc1_load_register[5]         ; mmc1_load_register[4]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.339      ;
+; 2.119 ; mmc1_load_register[4]         ; mmc1_load_register[3]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.340      ;
+; 2.121 ; mapper65_irq_latch[3]         ; mapper65_irq_value[3]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.342      ;
+; 2.125 ; mapper65_irq_latch[1]         ; mapper65_irq_value[1]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.346      ;
+; 2.126 ; reset_state[1]                ; reset_state[1]                ; m2           ; m2          ; 0.000        ; 0.000      ; 2.347      ;
+; 2.127 ; mapper65_irq_latch[5]         ; mapper65_irq_value[5]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.348      ;
+; 2.127 ; mmc3_irq_reload               ; mmc3_irq_reload               ; m2           ; m2          ; 0.000        ; 0.000      ; 2.348      ;
+; 2.127 ; mapper42_irq_value[6]         ; mapper42_irq_value[6]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.348      ;
+; 2.128 ; mapper65_irq_latch[7]         ; mapper65_irq_value[7]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.349      ;
+; 2.131 ; mapper65_irq_latch[6]         ; mapper65_irq_value[6]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.352      ;
+; 2.132 ; reset_state[1]                ; reset_state[0]                ; m2           ; m2          ; 0.000        ; 0.000      ; 2.353      ;
+; 2.132 ; mapper65_irq_latch[12]        ; mapper65_irq_value[12]        ; m2           ; m2          ; 0.000        ; 0.000      ; 2.353      ;
+; 2.133 ; mapper18_irq_latch[15]        ; mapper18_irq_value[15]        ; m2           ; m2          ; 0.000        ; 0.000      ; 2.354      ;
+; 2.134 ; mapper42_irq_value[4]         ; mapper42_irq_value[4]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.355      ;
+; 2.144 ; mapper90_irq_out              ; mapper90_irq_out              ; m2           ; m2          ; 0.000        ; 0.000      ; 2.365      ;
+; 2.144 ; mapper69_irq_enabled          ; mapper69_irq_enabled          ; m2           ; m2          ; 0.000        ; 0.000      ; 2.365      ;
+; 2.144 ; carry                         ; carry                         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.365      ;
+; 2.145 ; mapper90_irq_reload           ; mapper90_irq_reload           ; m2           ; m2          ; 0.000        ; 0.000      ; 2.366      ;
+; 2.146 ; chr_bank_g[0]                 ; chr_bank_g[0]                 ; m2           ; m2          ; 0.000        ; 0.000      ; 2.367      ;
+; 2.149 ; mapper69_counter_enabled      ; mapper69_counter_enabled      ; m2           ; m2          ; 0.000        ; 0.000      ; 2.370      ;
+; 2.152 ; mapper42_irq_enabled          ; mapper42_irq_enabled          ; m2           ; m2          ; 0.000        ; 0.000      ; 2.373      ;
+; 2.179 ; mapper67_irq_enabled          ; mapper67_irq_out              ; m2           ; m2          ; 0.000        ; 0.000      ; 2.400      ;
+; 2.180 ; ppu_rd_hi_time[1]             ; ppu_rd_hi_time[1]             ; m2           ; m2          ; 0.000        ; 0.000      ; 2.401      ;
+; 2.180 ; vrc4_irq_prescaler_counter[0] ; vrc4_irq_prescaler_counter[0] ; m2           ; m2          ; 0.000        ; 0.000      ; 2.401      ;
+; 2.188 ; vrc4_irq_latch[6]             ; vrc4_irq_value[6]             ; m2           ; m2          ; 0.000        ; 0.000      ; 2.409      ;
+; 2.198 ; ppu_rd_hi_time[1]             ; ppu_rd_hi_time[3]             ; m2           ; m2          ; 0.000        ; 0.000      ; 2.419      ;
+; 2.199 ; ppu_rd_hi_time[1]             ; ppu_rd_hi_time[0]             ; m2           ; m2          ; 0.000        ; 0.000      ; 2.420      ;
+; 2.199 ; vrc4_irq_prescaler_counter[0] ; vrc4_irq_prescaler_counter[1] ; m2           ; m2          ; 0.000        ; 0.000      ; 2.420      ;
+; 2.202 ; ppu_rd_hi_time[1]             ; ppu_rd_hi_time[2]             ; m2           ; m2          ; 0.000        ; 0.000      ; 2.423      ;
+; 2.212 ; prg_bank_a[0]                 ; prg_bank_a[0]                 ; m2           ; m2          ; 0.000        ; 0.000      ; 2.433      ;
+; 2.212 ; mapper42_irq_value[10]        ; mapper42_irq_value[10]        ; m2           ; m2          ; 0.000        ; 0.000      ; 2.433      ;
+; 2.212 ; vrc4_irq_latch[2]             ; vrc4_irq_value[2]             ; m2           ; m2          ; 0.000        ; 0.000      ; 2.433      ;
+; 2.213 ; vrc4_irq_latch[7]             ; vrc4_irq_value[7]             ; m2           ; m2          ; 0.000        ; 0.000      ; 2.434      ;
+; 2.215 ; vrc4_irq_latch[3]             ; vrc4_irq_value[3]             ; m2           ; m2          ; 0.000        ; 0.000      ; 2.436      ;
+; 2.216 ; controller_data[0]            ; controller_data[1]            ; m2           ; m2          ; 0.000        ; 0.000      ; 2.437      ;
+; 2.220 ; prg_bank_b[0]                 ; prg_bank_b[0]                 ; m2           ; m2          ; 0.000        ; 0.000      ; 2.441      ;
+; 2.220 ; mapper18_irq_latch[4]         ; mapper18_irq_value[4]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.441      ;
+; 2.221 ; mapper65_irq_latch[10]        ; mapper65_irq_value[10]        ; m2           ; m2          ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; mapper42_irq_value[5]         ; mapper42_irq_value[5]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; mapper42_irq_value[0]         ; mapper42_irq_value[0]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.442      ;
+; 2.222 ; map_rom_on_6000               ; map_rom_on_6000               ; m2           ; m2          ; 0.000        ; 0.000      ; 2.443      ;
+; 2.222 ; mapper67_irq_latch            ; mapper67_irq_latch            ; m2           ; m2          ; 0.000        ; 0.000      ; 2.443      ;
+; 2.223 ; mmc1_load_register[1]         ; mmc1_load_register[1]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.444      ;
+; 2.226 ; ppu_rd_hi_time[0]             ; new_screen                    ; m2           ; m2          ; 0.000        ; 0.000      ; 2.447      ;
+; 2.226 ; mapper18_irq_latch[6]         ; mapper18_irq_value[6]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.447      ;
+; 2.227 ; mmc1_load_register[3]         ; mmc1_load_register[2]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.448      ;
+; 2.230 ; mapper42_irq_value[12]        ; mapper42_irq_value[12]        ; m2           ; m2          ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230 ; mapper42_irq_value[2]         ; mapper42_irq_value[2]         ; m2           ; m2          ; 0.000        ; 0.000      ; 2.451      ;
++-------+-------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'ppu_rd_in'                                                                                                                ;
++-------+------------------------+------------------------+-----------------+-------------+--------------+------------+------------+
+; Slack ; From Node              ; To Node                ; Launch Clock    ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------+------------------------+-----------------+-------------+--------------+------------+------------+
+; 1.650 ; ppu_latch0             ; ppu_latch0             ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 1.871      ;
+; 1.676 ; ppu_latch1             ; ppu_latch1             ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 1.897      ;
+; 1.677 ; ppu_addr_in[12]        ; ppu_nt_read_count[1]   ; ppu_addr_in[12] ; ppu_rd_in   ; 0.000        ; 3.953      ; 5.851      ;
+; 1.682 ; ppu_addr_in[12]        ; ppu_nt_read_count[0]   ; ppu_addr_in[12] ; ppu_rd_in   ; 0.000        ; 3.953      ; 5.856      ;
+; 1.919 ; ppu_nt_read_count[0]   ; ppu_nt_read_count[0]   ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 2.140      ;
+; 1.925 ; ppu_nt_read_count[0]   ; ppu_nt_read_count[1]   ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 2.146      ;
+; 2.107 ; mapper_163_latch       ; mapper_163_latch       ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 2.328      ;
+; 2.177 ; ppu_addr_in[12]        ; ppu_nt_read_count[1]   ; ppu_addr_in[12] ; ppu_rd_in   ; -0.500       ; 3.953      ; 5.851      ;
+; 2.182 ; ppu_addr_in[12]        ; ppu_nt_read_count[0]   ; ppu_addr_in[12] ; ppu_rd_in   ; -0.500       ; 3.953      ; 5.856      ;
+; 2.210 ; new_dendy_init_a13h[0] ; new_dendy_init_a13h[0] ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 2.431      ;
+; 2.233 ; new_dendy_init_a13h[0] ; new_dendy_init_a13h[1] ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 2.454      ;
+; 2.250 ; ppu_nt_read_count[1]   ; ppu_nt_read_count[1]   ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 2.471      ;
+; 2.256 ; ppu_nt_read_count[1]   ; ppu_nt_read_count[0]   ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 2.477      ;
+; 2.262 ; new_dendy_init_a13l[1] ; new_dendy_init_a13l[1] ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 2.483      ;
+; 2.270 ; new_dendy_init_a13l[1] ; new_dendy_init_a13l[0] ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 2.491      ;
+; 2.290 ; new_dendy_init_a13h[1] ; new_dendy_init_a13h[0] ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 2.511      ;
+; 2.365 ; ppu_addr_in[12]        ; ppu_latch1             ; ppu_addr_in[12] ; ppu_rd_in   ; 0.000        ; 3.953      ; 6.539      ;
+; 2.462 ; new_screen             ; new_screen_clear       ; m2              ; ppu_rd_in   ; 0.000        ; 0.106      ; 2.789      ;
+; 2.519 ; new_dendy              ; new_dendy              ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 2.740      ;
+; 2.549 ; new_dendy_init_a13l[0] ; new_dendy_init_a13l[0] ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 2.770      ;
+; 2.558 ; new_dendy_init_a13l[0] ; new_dendy_init_a13l[1] ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 2.779      ;
+; 2.595 ; new_dendy_init_a13h[1] ; new_dendy_init_a13h[1] ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 2.816      ;
+; 2.626 ; new_screen_clear       ; mapper_163_latch       ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 2.847      ;
+; 2.816 ; new_screen             ; scanline[6]            ; m2              ; ppu_rd_in   ; 0.000        ; 0.106      ; 3.143      ;
+; 2.821 ; new_screen             ; scanline[3]            ; m2              ; ppu_rd_in   ; 0.000        ; 0.106      ; 3.148      ;
+; 2.826 ; ppu_addr_in[12]        ; ppu_latch0             ; ppu_addr_in[12] ; ppu_rd_in   ; 0.000        ; 3.953      ; 7.000      ;
+; 2.865 ; ppu_addr_in[12]        ; ppu_latch1             ; ppu_addr_in[12] ; ppu_rd_in   ; -0.500       ; 3.953      ; 6.539      ;
+; 2.915 ; new_screen             ; scanline[0]            ; m2              ; ppu_rd_in   ; 0.000        ; 0.106      ; 3.242      ;
+; 2.917 ; new_screen             ; scanline[7]            ; m2              ; ppu_rd_in   ; 0.000        ; 0.106      ; 3.244      ;
+; 3.011 ; new_dendy_init_a13l[1] ; new_dendy              ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 3.232      ;
+; 3.110 ; new_screen_clear       ; scanline[2]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 3.331      ;
+; 3.111 ; new_screen_clear       ; scanline[1]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 3.332      ;
+; 3.134 ; scanline[1]            ; scanline[1]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 3.355      ;
+; 3.271 ; scanline[2]            ; scanline[2]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 3.492      ;
+; 3.287 ; new_dendy_init_a13h[0] ; new_dendy              ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 3.508      ;
+; 3.293 ; new_screen             ; scanline[1]            ; m2              ; ppu_rd_in   ; 0.000        ; 0.106      ; 3.620      ;
+; 3.294 ; new_screen             ; scanline[2]            ; m2              ; ppu_rd_in   ; 0.000        ; 0.106      ; 3.621      ;
+; 3.319 ; new_dendy_init_a13l[0] ; new_dendy              ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 3.540      ;
+; 3.326 ; ppu_addr_in[12]        ; ppu_latch0             ; ppu_addr_in[12] ; ppu_rd_in   ; -0.500       ; 3.953      ; 7.000      ;
+; 3.378 ; new_dendy_init[3]      ; new_dendy_init_a13h[1] ; m2              ; ppu_rd_in   ; -0.500       ; 0.106      ; 3.205      ;
+; 3.381 ; new_screen             ; scanline[5]            ; m2              ; ppu_rd_in   ; 0.000        ; 0.106      ; 3.708      ;
+; 3.381 ; new_screen_clear       ; scanline[7]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 3.602      ;
+; 3.384 ; new_dendy_init[3]      ; new_dendy              ; m2              ; ppu_rd_in   ; -0.500       ; 0.106      ; 3.211      ;
+; 3.384 ; new_screen             ; scanline[4]            ; m2              ; ppu_rd_in   ; 0.000        ; 0.106      ; 3.711      ;
+; 3.387 ; new_dendy_init[3]      ; new_dendy_init_a13h[0] ; m2              ; ppu_rd_in   ; -0.500       ; 0.106      ; 3.214      ;
+; 3.387 ; new_screen_clear       ; scanline[0]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 3.608      ;
+; 3.469 ; new_screen             ; mapper_163_latch       ; m2              ; ppu_rd_in   ; 0.000        ; 0.106      ; 3.796      ;
+; 3.600 ; new_dendy_init[3]      ; new_dendy_init_a13l[1] ; m2              ; ppu_rd_in   ; -0.500       ; 0.106      ; 3.427      ;
+; 3.600 ; new_dendy_init_a13h[1] ; new_dendy              ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 3.821      ;
+; 3.600 ; ppu_addr_in[12]        ; mapper_163_latch       ; ppu_addr_in[12] ; ppu_rd_in   ; 0.000        ; 3.953      ; 7.774      ;
+; 3.609 ; new_dendy_init[3]      ; new_dendy_init_a13l[0] ; m2              ; ppu_rd_in   ; -0.500       ; 0.106      ; 3.436      ;
+; 3.688 ; new_dendy_init[2]      ; new_dendy_init_a13h[1] ; m2              ; ppu_rd_in   ; -0.500       ; 0.106      ; 3.515      ;
+; 3.688 ; ppu_addr_in[12]        ; scanline[0]            ; ppu_addr_in[12] ; ppu_rd_in   ; 0.000        ; 3.953      ; 7.862      ;
+; 3.688 ; ppu_addr_in[12]        ; scanline[7]            ; ppu_addr_in[12] ; ppu_rd_in   ; 0.000        ; 3.953      ; 7.862      ;
+; 3.694 ; new_dendy_init[2]      ; new_dendy              ; m2              ; ppu_rd_in   ; -0.500       ; 0.106      ; 3.521      ;
+; 3.697 ; new_dendy_init[2]      ; new_dendy_init_a13h[0] ; m2              ; ppu_rd_in   ; -0.500       ; 0.106      ; 3.524      ;
+; 3.902 ; scanline[4]            ; scanline[4]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 4.123      ;
+; 3.910 ; new_dendy_init[2]      ; new_dendy_init_a13l[1] ; m2              ; ppu_rd_in   ; -0.500       ; 0.106      ; 3.737      ;
+; 3.913 ; new_dendy_init[0]      ; new_dendy_init_a13h[1] ; m2              ; ppu_rd_in   ; -0.500       ; 0.106      ; 3.740      ;
+; 3.919 ; new_dendy_init[0]      ; new_dendy              ; m2              ; ppu_rd_in   ; -0.500       ; 0.106      ; 3.746      ;
+; 3.919 ; new_dendy_init[2]      ; new_dendy_init_a13l[0] ; m2              ; ppu_rd_in   ; -0.500       ; 0.106      ; 3.746      ;
+; 3.922 ; new_dendy_init[0]      ; new_dendy_init_a13h[0] ; m2              ; ppu_rd_in   ; -0.500       ; 0.106      ; 3.749      ;
+; 3.941 ; scanline[1]            ; scanline[2]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 4.162      ;
+; 3.963 ; scanline[5]            ; scanline[5]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 4.184      ;
+; 4.012 ; ppu_addr_in[12]        ; mmc5_irq_out           ; ppu_addr_in[12] ; ppu_rd_in   ; 0.000        ; 3.953      ; 8.186      ;
+; 4.035 ; new_dendy_init[1]      ; new_dendy_init_a13h[1] ; m2              ; ppu_rd_in   ; -0.500       ; 0.106      ; 3.862      ;
+; 4.041 ; new_dendy_init[1]      ; new_dendy              ; m2              ; ppu_rd_in   ; -0.500       ; 0.106      ; 3.868      ;
+; 4.044 ; new_dendy_init[1]      ; new_dendy_init_a13h[0] ; m2              ; ppu_rd_in   ; -0.500       ; 0.106      ; 3.871      ;
+; 4.071 ; ppu_addr_in[12]        ; scanline[1]            ; ppu_addr_in[12] ; ppu_rd_in   ; 0.000        ; 3.953      ; 8.245      ;
+; 4.071 ; ppu_addr_in[12]        ; scanline[2]            ; ppu_addr_in[12] ; ppu_rd_in   ; 0.000        ; 3.953      ; 8.245      ;
+; 4.098 ; mmc5_irq_ack           ; mmc5_irq_out           ; m2              ; ppu_rd_in   ; 0.000        ; 0.106      ; 4.425      ;
+; 4.100 ; ppu_addr_in[12]        ; mapper_163_latch       ; ppu_addr_in[12] ; ppu_rd_in   ; -0.500       ; 3.953      ; 7.774      ;
+; 4.107 ; mmc5_irq_line[0]       ; mmc5_irq_out           ; m2              ; ppu_rd_in   ; 0.000        ; 0.106      ; 4.434      ;
+; 4.130 ; scanline[7]            ; scanline[7]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 4.351      ;
+; 4.135 ; new_dendy_init[0]      ; new_dendy_init_a13l[1] ; m2              ; ppu_rd_in   ; -0.500       ; 0.106      ; 3.962      ;
+; 4.144 ; new_dendy_init[0]      ; new_dendy_init_a13l[0] ; m2              ; ppu_rd_in   ; -0.500       ; 0.106      ; 3.971      ;
+; 4.188 ; ppu_addr_in[12]        ; scanline[0]            ; ppu_addr_in[12] ; ppu_rd_in   ; -0.500       ; 3.953      ; 7.862      ;
+; 4.188 ; ppu_addr_in[12]        ; scanline[7]            ; ppu_addr_in[12] ; ppu_rd_in   ; -0.500       ; 3.953      ; 7.862      ;
+; 4.218 ; scanline[3]            ; scanline[3]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 4.439      ;
+; 4.226 ; new_screen_clear       ; ppu_nt_read_count[1]   ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 4.447      ;
+; 4.226 ; new_screen_clear       ; ppu_nt_read_count[0]   ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 4.447      ;
+; 4.257 ; new_dendy_init[1]      ; new_dendy_init_a13l[1] ; m2              ; ppu_rd_in   ; -0.500       ; 0.106      ; 4.084      ;
+; 4.266 ; new_dendy_init[1]      ; new_dendy_init_a13l[0] ; m2              ; ppu_rd_in   ; -0.500       ; 0.106      ; 4.093      ;
+; 4.311 ; scanline[0]            ; scanline[1]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 4.532      ;
+; 4.422 ; scanline[0]            ; scanline[2]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 4.643      ;
+; 4.512 ; ppu_addr_in[12]        ; mmc5_irq_out           ; ppu_addr_in[12] ; ppu_rd_in   ; -0.500       ; 3.953      ; 8.186      ;
+; 4.569 ; scanline[0]            ; scanline[0]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 4.790      ;
+; 4.571 ; ppu_addr_in[12]        ; scanline[1]            ; ppu_addr_in[12] ; ppu_rd_in   ; -0.500       ; 3.953      ; 8.245      ;
+; 4.571 ; ppu_addr_in[12]        ; scanline[2]            ; ppu_addr_in[12] ; ppu_rd_in   ; -0.500       ; 3.953      ; 8.245      ;
+; 4.577 ; new_screen_clear       ; scanline[4]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 4.798      ;
+; 4.577 ; scanline[1]            ; scanline[4]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 4.798      ;
+; 4.578 ; new_screen_clear       ; scanline[5]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 4.799      ;
+; 4.659 ; scanline[2]            ; scanline[4]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 4.880      ;
+; 4.720 ; scanline[3]            ; scanline[4]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 4.941      ;
+; 4.771 ; scanline[1]            ; scanline[3]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 4.992      ;
+; 4.827 ; ppu_addr_in[12]        ; scanline[3]            ; ppu_addr_in[12] ; ppu_rd_in   ; 0.000        ; 3.953      ; 9.001      ;
+; 4.827 ; ppu_addr_in[12]        ; scanline[4]            ; ppu_addr_in[12] ; ppu_rd_in   ; 0.000        ; 3.953      ; 9.001      ;
+; 4.827 ; ppu_addr_in[12]        ; scanline[5]            ; ppu_addr_in[12] ; ppu_rd_in   ; 0.000        ; 3.953      ; 9.001      ;
+; 4.827 ; ppu_addr_in[12]        ; scanline[6]            ; ppu_addr_in[12] ; ppu_rd_in   ; 0.000        ; 3.953      ; 9.001      ;
+; 4.853 ; scanline[2]            ; scanline[3]            ; ppu_rd_in       ; ppu_rd_in   ; 0.000        ; 0.000      ; 5.074      ;
++-------+------------------------+------------------------+-----------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'ppu_addr_in[12]'                                                                                                                    ;
++-------+---------------------------+---------------------------+-----------------+-----------------+--------------+------------+------------+
+; Slack ; From Node                 ; To Node                   ; Launch Clock    ; Latch Clock     ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------+---------------------------+-----------------+-----------------+--------------+------------+------------+
+; 2.060 ; mapper90_irq_pending      ; mapper90_irq_pending      ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.281      ;
+; 2.117 ; mmc3_irq_counter[1]       ; mmc3_irq_counter[1]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; mmc3_irq_counter[2]       ; mmc3_irq_counter[2]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; mapper90_irq_counter[2]   ; mapper90_irq_counter[2]   ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.338      ;
+; 2.127 ; mapper90_irq_counter[8]   ; mapper90_irq_counter[8]   ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.348      ;
+; 2.127 ; mapper90_irq_counter[7]   ; mapper90_irq_counter[7]   ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.348      ;
+; 2.133 ; mmc3_irq_counter[0]       ; mmc3_irq_counter[0]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.354      ;
+; 2.145 ; mmc3_irq_counter[7]       ; mmc3_irq_counter[7]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.366      ;
+; 2.163 ; mapper90_irq_reload       ; mapper90_irq_reload_clear ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 1.990      ;
+; 2.213 ; mapper90_irq_counter[1]   ; mapper90_irq_counter[1]   ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.434      ;
+; 2.222 ; mmc3_irq_counter[3]       ; mmc3_irq_counter[3]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.443      ;
+; 2.222 ; mapper90_irq_counter[10]  ; mapper90_irq_counter[10]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.443      ;
+; 2.230 ; mapper90_irq_counter[9]   ; mapper90_irq_counter[9]   ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.451      ;
+; 2.231 ; mmc3_irq_counter[4]       ; mmc3_irq_counter[4]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; mapper90_irq_counter[6]   ; mapper90_irq_counter[6]   ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.452      ;
+; 2.239 ; mmc3_irq_reload_clear     ; mmc3_irq_reload_clear     ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.460      ;
+; 2.499 ; mmc3_irq_counter[6]       ; mmc3_irq_counter[6]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.720      ;
+; 2.503 ; mapper90_irq_out_clear    ; mapper90_irq_pending      ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 2.330      ;
+; 2.523 ; mmc3_irq_reload           ; mmc3_irq_reload_clear     ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 2.350      ;
+; 2.525 ; mapper90_irq_latch[6]     ; mapper90_irq_counter[6]   ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 2.352      ;
+; 2.525 ; mapper90_irq_counter[3]   ; mapper90_irq_counter[3]   ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.746      ;
+; 2.526 ; mapper90_irq_latch[10]    ; mapper90_irq_counter[10]  ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 2.353      ;
+; 2.528 ; mapper90_irq_latch[9]     ; mapper90_irq_counter[9]   ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 2.355      ;
+; 2.590 ; mapper90_irq_counter[5]   ; mapper90_irq_counter[5]   ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.811      ;
+; 2.596 ; a12_low_time[1]           ; mmc3_irq_reload_clear     ; m2              ; ppu_addr_in[12] ; 0.000        ; 0.106      ; 2.923      ;
+; 2.619 ; mapper90_irq_latch[8]     ; mapper90_irq_counter[8]   ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 2.446      ;
+; 2.626 ; mapper90_irq_latch[7]     ; mapper90_irq_counter[7]   ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 2.453      ;
+; 2.631 ; mapper90_irq_counter[4]   ; mapper90_irq_counter[4]   ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.852      ;
+; 2.641 ; mapper90_irq_counter[0]   ; mapper90_irq_counter[0]   ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.862      ;
+; 2.644 ; mmc3_irq_counter[5]       ; mmc3_irq_counter[5]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 2.865      ;
+; 2.827 ; a12_low_time[0]           ; mmc3_irq_reload_clear     ; m2              ; ppu_addr_in[12] ; 0.000        ; 0.106      ; 3.154      ;
+; 2.862 ; mmc3_irq_latch[1]         ; mmc3_irq_counter[1]       ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 2.689      ;
+; 2.893 ; mapper90_irq_latch[1]     ; mapper90_irq_counter[1]   ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 2.720      ;
+; 2.903 ; mmc3_irq_latch[2]         ; mmc3_irq_counter[2]       ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 2.730      ;
+; 2.922 ; mapper90_irq_latch[4]     ; mapper90_irq_counter[4]   ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 2.749      ;
+; 2.949 ; mmc3_irq_counter[1]       ; mmc3_irq_counter[2]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949 ; mmc3_irq_counter[2]       ; mmc3_irq_counter[3]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.170      ;
+; 2.965 ; mmc3_irq_counter[0]       ; mmc3_irq_counter[1]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.186      ;
+; 2.999 ; mapper90_irq_latch[3]     ; mapper90_irq_counter[3]   ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 2.826      ;
+; 3.004 ; mapper90_irq_latch[5]     ; mapper90_irq_counter[5]   ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 2.831      ;
+; 3.011 ; mapper90_irq_latch[2]     ; mapper90_irq_counter[2]   ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 2.838      ;
+; 3.049 ; mmc3_irq_latch[5]         ; mmc3_irq_counter[5]       ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 2.876      ;
+; 3.060 ; mmc3_irq_counter[2]       ; mmc3_irq_counter[4]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060 ; mmc3_irq_counter[1]       ; mmc3_irq_counter[3]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.281      ;
+; 3.076 ; mmc3_irq_counter[0]       ; mmc3_irq_counter[2]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.297      ;
+; 3.162 ; mmc3_irq_counter[3]       ; mmc3_irq_counter[4]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.383      ;
+; 3.171 ; mmc3_irq_counter[1]       ; mmc3_irq_counter[4]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.392      ;
+; 3.187 ; mmc3_irq_counter[0]       ; mmc3_irq_counter[3]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.408      ;
+; 3.205 ; mapper90_irq_reload_clear ; mapper90_irq_counter[1]   ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.426      ;
+; 3.207 ; mapper90_irq_reload_clear ; mapper90_irq_counter[2]   ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.428      ;
+; 3.247 ; mmc3_irq_latch[4]         ; mmc3_irq_counter[4]       ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 3.074      ;
+; 3.298 ; mmc3_irq_counter[0]       ; mmc3_irq_counter[4]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.519      ;
+; 3.331 ; mmc3_irq_counter[6]       ; mmc3_irq_counter[7]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.552      ;
+; 3.340 ; mapper90_irq_reload_clear ; mapper90_irq_counter[4]   ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.561      ;
+; 3.342 ; mapper90_irq_reload_clear ; mapper90_irq_counter[0]   ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.563      ;
+; 3.343 ; mapper90_irq_reload_clear ; mapper90_irq_counter[3]   ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.564      ;
+; 3.344 ; mapper90_irq_reload_clear ; mapper90_irq_counter[5]   ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.565      ;
+; 3.351 ; mapper90_irq_reload_clear ; mapper90_irq_counter[6]   ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.572      ;
+; 3.357 ; mapper90_irq_reload_clear ; mapper90_irq_counter[8]   ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.578      ;
+; 3.359 ; mapper90_irq_reload_clear ; mapper90_irq_counter[10]  ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.580      ;
+; 3.361 ; mapper90_irq_reload_clear ; mapper90_irq_counter[7]   ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.582      ;
+; 3.362 ; mapper90_irq_reload_clear ; mapper90_irq_counter[9]   ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.583      ;
+; 3.492 ; mmc3_irq_counter[4]       ; mmc3_irq_counter[5]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; mmc3_irq_counter[4]       ; mmc3_irq_counter[6]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; mmc3_irq_counter[4]       ; mmc3_irq_counter[7]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.713      ;
+; 3.520 ; a12_low_time[1]           ; mmc3_irq_counter[0]       ; m2              ; ppu_addr_in[12] ; 0.000        ; 0.106      ; 3.847      ;
+; 3.520 ; a12_low_time[1]           ; mmc3_irq_counter[1]       ; m2              ; ppu_addr_in[12] ; 0.000        ; 0.106      ; 3.847      ;
+; 3.520 ; a12_low_time[1]           ; mmc3_irq_counter[4]       ; m2              ; ppu_addr_in[12] ; 0.000        ; 0.106      ; 3.847      ;
+; 3.520 ; a12_low_time[1]           ; mmc3_irq_counter[5]       ; m2              ; ppu_addr_in[12] ; 0.000        ; 0.106      ; 3.847      ;
+; 3.520 ; a12_low_time[1]           ; mmc3_irq_counter[6]       ; m2              ; ppu_addr_in[12] ; 0.000        ; 0.106      ; 3.847      ;
+; 3.520 ; a12_low_time[1]           ; mmc3_irq_counter[7]       ; m2              ; ppu_addr_in[12] ; 0.000        ; 0.106      ; 3.847      ;
+; 3.520 ; a12_low_time[1]           ; mmc3_irq_counter[2]       ; m2              ; ppu_addr_in[12] ; 0.000        ; 0.106      ; 3.847      ;
+; 3.520 ; a12_low_time[1]           ; mmc3_irq_counter[3]       ; m2              ; ppu_addr_in[12] ; 0.000        ; 0.106      ; 3.847      ;
+; 3.522 ; mapper90_irq_latch[0]     ; mapper90_irq_counter[0]   ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 3.349      ;
+; 3.529 ; mmc3_irq_counter[2]       ; mmc3_irq_counter[5]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.750      ;
+; 3.529 ; mmc3_irq_counter[2]       ; mmc3_irq_counter[6]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.750      ;
+; 3.529 ; mmc3_irq_counter[2]       ; mmc3_irq_counter[7]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.750      ;
+; 3.584 ; mmc3_irq_counter[5]       ; mmc3_irq_counter[6]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.805      ;
+; 3.631 ; mmc3_irq_counter[3]       ; mmc3_irq_counter[5]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.852      ;
+; 3.631 ; mmc3_irq_counter[3]       ; mmc3_irq_counter[6]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.852      ;
+; 3.631 ; mmc3_irq_counter[3]       ; mmc3_irq_counter[7]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.852      ;
+; 3.640 ; mmc3_irq_counter[1]       ; mmc3_irq_counter[5]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.861      ;
+; 3.640 ; mmc3_irq_counter[1]       ; mmc3_irq_counter[6]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.861      ;
+; 3.640 ; mmc3_irq_counter[1]       ; mmc3_irq_counter[7]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.861      ;
+; 3.695 ; mmc3_irq_counter[5]       ; mmc3_irq_counter[7]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.916      ;
+; 3.745 ; mmc3_irq_latch[7]         ; mmc3_irq_counter[7]       ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 3.572      ;
+; 3.767 ; mmc3_irq_counter[0]       ; mmc3_irq_counter[5]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.988      ;
+; 3.767 ; mmc3_irq_counter[0]       ; mmc3_irq_counter[6]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.988      ;
+; 3.767 ; mmc3_irq_counter[0]       ; mmc3_irq_counter[7]       ; ppu_addr_in[12] ; ppu_addr_in[12] ; 0.000        ; 0.000      ; 3.988      ;
+; 3.870 ; a12_low_time[0]           ; mmc3_irq_counter[0]       ; m2              ; ppu_addr_in[12] ; 0.000        ; 0.106      ; 4.197      ;
+; 3.870 ; a12_low_time[0]           ; mmc3_irq_counter[1]       ; m2              ; ppu_addr_in[12] ; 0.000        ; 0.106      ; 4.197      ;
+; 3.870 ; a12_low_time[0]           ; mmc3_irq_counter[4]       ; m2              ; ppu_addr_in[12] ; 0.000        ; 0.106      ; 4.197      ;
+; 3.870 ; a12_low_time[0]           ; mmc3_irq_counter[5]       ; m2              ; ppu_addr_in[12] ; 0.000        ; 0.106      ; 4.197      ;
+; 3.870 ; a12_low_time[0]           ; mmc3_irq_counter[6]       ; m2              ; ppu_addr_in[12] ; 0.000        ; 0.106      ; 4.197      ;
+; 3.870 ; a12_low_time[0]           ; mmc3_irq_counter[7]       ; m2              ; ppu_addr_in[12] ; 0.000        ; 0.106      ; 4.197      ;
+; 3.870 ; a12_low_time[0]           ; mmc3_irq_counter[2]       ; m2              ; ppu_addr_in[12] ; 0.000        ; 0.106      ; 4.197      ;
+; 3.870 ; a12_low_time[0]           ; mmc3_irq_counter[3]       ; m2              ; ppu_addr_in[12] ; 0.000        ; 0.106      ; 4.197      ;
+; 4.056 ; mmc3_irq_latch[6]         ; mmc3_irq_counter[6]       ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 3.883      ;
+; 4.074 ; mmc3_irq_latch[3]         ; mmc3_irq_counter[3]       ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 3.901      ;
+; 4.098 ; mapper90_irq_reload       ; mapper90_irq_counter[1]   ; m2              ; ppu_addr_in[12] ; -0.500       ; 0.106      ; 3.925      ;
++-------+---------------------------+---------------------------+-----------------+-----------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'm2'                                                                                                         ;
++--------+------------------+-------------------+-----------------+-------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node           ; Launch Clock    ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+-------------------+-----------------+-------------+--------------+------------+------------+
+; -4.795 ; new_screen       ; new_screen        ; m2              ; m2          ; 1.000        ; 0.000      ; 5.462      ;
+; -3.952 ; new_screen_clear ; new_screen        ; ppu_rd_in       ; m2          ; 1.000        ; -0.106     ; 4.513      ;
+; -1.983 ; ppu_rd_in        ; new_screen        ; ppu_rd_in       ; m2          ; 0.500        ; 3.847      ; 5.997      ;
+; -1.483 ; ppu_rd_in        ; new_screen        ; ppu_rd_in       ; m2          ; 1.000        ; 3.847      ; 5.997      ;
+; -0.970 ; ppu_addr_in[12]  ; a12_low_time[0]   ; ppu_addr_in[12] ; m2          ; 0.500        ; 3.847      ; 4.984      ;
+; -0.970 ; ppu_addr_in[12]  ; a12_low_time[1]   ; ppu_addr_in[12] ; m2          ; 0.500        ; 3.847      ; 4.984      ;
+; -0.470 ; ppu_addr_in[12]  ; a12_low_time[0]   ; ppu_addr_in[12] ; m2          ; 1.000        ; 3.847      ; 4.984      ;
+; -0.470 ; ppu_addr_in[12]  ; a12_low_time[1]   ; ppu_addr_in[12] ; m2          ; 1.000        ; 3.847      ; 4.984      ;
+; -0.393 ; ppu_rd_in        ; ppu_rd_hi_time[3] ; ppu_rd_in       ; m2          ; 0.500        ; 3.847      ; 4.407      ;
+; -0.393 ; ppu_rd_in        ; ppu_rd_hi_time[1] ; ppu_rd_in       ; m2          ; 0.500        ; 3.847      ; 4.407      ;
+; -0.393 ; ppu_rd_in        ; ppu_rd_hi_time[0] ; ppu_rd_in       ; m2          ; 0.500        ; 3.847      ; 4.407      ;
+; -0.393 ; ppu_rd_in        ; ppu_rd_hi_time[2] ; ppu_rd_in       ; m2          ; 0.500        ; 3.847      ; 4.407      ;
+; 0.107  ; ppu_rd_in        ; ppu_rd_hi_time[3] ; ppu_rd_in       ; m2          ; 1.000        ; 3.847      ; 4.407      ;
+; 0.107  ; ppu_rd_in        ; ppu_rd_hi_time[1] ; ppu_rd_in       ; m2          ; 1.000        ; 3.847      ; 4.407      ;
+; 0.107  ; ppu_rd_in        ; ppu_rd_hi_time[0] ; ppu_rd_in       ; m2          ; 1.000        ; 3.847      ; 4.407      ;
+; 0.107  ; ppu_rd_in        ; ppu_rd_hi_time[2] ; ppu_rd_in       ; m2          ; 1.000        ; 3.847      ; 4.407      ;
++--------+------------------+-------------------+-----------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Removal: 'm2'                                                                                                         ;
++-------+------------------+-------------------+-----------------+-------------+--------------+------------+------------+
+; Slack ; From Node        ; To Node           ; Launch Clock    ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------+-------------------+-----------------+-------------+--------------+------------+------------+
+; 0.339 ; ppu_rd_in        ; ppu_rd_hi_time[3] ; ppu_rd_in       ; m2          ; 0.000        ; 3.847      ; 4.407      ;
+; 0.339 ; ppu_rd_in        ; ppu_rd_hi_time[1] ; ppu_rd_in       ; m2          ; 0.000        ; 3.847      ; 4.407      ;
+; 0.339 ; ppu_rd_in        ; ppu_rd_hi_time[0] ; ppu_rd_in       ; m2          ; 0.000        ; 3.847      ; 4.407      ;
+; 0.339 ; ppu_rd_in        ; ppu_rd_hi_time[2] ; ppu_rd_in       ; m2          ; 0.000        ; 3.847      ; 4.407      ;
+; 0.839 ; ppu_rd_in        ; ppu_rd_hi_time[3] ; ppu_rd_in       ; m2          ; -0.500       ; 3.847      ; 4.407      ;
+; 0.839 ; ppu_rd_in        ; ppu_rd_hi_time[1] ; ppu_rd_in       ; m2          ; -0.500       ; 3.847      ; 4.407      ;
+; 0.839 ; ppu_rd_in        ; ppu_rd_hi_time[0] ; ppu_rd_in       ; m2          ; -0.500       ; 3.847      ; 4.407      ;
+; 0.839 ; ppu_rd_in        ; ppu_rd_hi_time[2] ; ppu_rd_in       ; m2          ; -0.500       ; 3.847      ; 4.407      ;
+; 0.916 ; ppu_addr_in[12]  ; a12_low_time[0]   ; ppu_addr_in[12] ; m2          ; 0.000        ; 3.847      ; 4.984      ;
+; 0.916 ; ppu_addr_in[12]  ; a12_low_time[1]   ; ppu_addr_in[12] ; m2          ; 0.000        ; 3.847      ; 4.984      ;
+; 1.416 ; ppu_addr_in[12]  ; a12_low_time[0]   ; ppu_addr_in[12] ; m2          ; -0.500       ; 3.847      ; 4.984      ;
+; 1.416 ; ppu_addr_in[12]  ; a12_low_time[1]   ; ppu_addr_in[12] ; m2          ; -0.500       ; 3.847      ; 4.984      ;
+; 1.929 ; ppu_rd_in        ; new_screen        ; ppu_rd_in       ; m2          ; 0.000        ; 3.847      ; 5.997      ;
+; 2.429 ; ppu_rd_in        ; new_screen        ; ppu_rd_in       ; m2          ; -0.500       ; 3.847      ; 5.997      ;
+; 4.398 ; new_screen_clear ; new_screen        ; ppu_rd_in       ; m2          ; 0.000        ; -0.106     ; 4.513      ;
+; 5.241 ; new_screen       ; new_screen        ; m2              ; m2          ; 0.000        ; 0.000      ; 5.462      ;
++-------+------------------+-------------------+-----------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------+
+; Setup Transfers                                                               ;
++-----------------+-----------------+----------+----------+----------+----------+
+; From Clock      ; To Clock        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------+-----------------+----------+----------+----------+----------+
+; m2              ; m2              ; 20       ; 0        ; 0        ; 32340    ;
+; ppu_addr_in[12] ; m2              ; 0        ; 0        ; 20       ; 0        ;
+; ppu_rd_in       ; m2              ; 0        ; 0        ; 0        ; 1        ;
+; m2              ; ppu_addr_in[12] ; 18       ; 303      ; 0        ; 0        ;
+; ppu_addr_in[12] ; ppu_addr_in[12] ; 407      ; 0        ; 0        ; 0        ;
+; m2              ; ppu_rd_in       ; 0        ; 0        ; 20       ; 99       ;
+; ppu_addr_in[12] ; ppu_rd_in       ; 0        ; 0        ; 14       ; 14       ;
+; ppu_rd_in       ; ppu_rd_in       ; 0        ; 0        ; 0        ; 244      ;
++-----------------+-----------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------+
+; Hold Transfers                                                                ;
++-----------------+-----------------+----------+----------+----------+----------+
+; From Clock      ; To Clock        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------+-----------------+----------+----------+----------+----------+
+; m2              ; m2              ; 20       ; 0        ; 0        ; 32340    ;
+; ppu_addr_in[12] ; m2              ; 0        ; 0        ; 20       ; 0        ;
+; ppu_rd_in       ; m2              ; 0        ; 0        ; 0        ; 1        ;
+; m2              ; ppu_addr_in[12] ; 18       ; 303      ; 0        ; 0        ;
+; ppu_addr_in[12] ; ppu_addr_in[12] ; 407      ; 0        ; 0        ; 0        ;
+; m2              ; ppu_rd_in       ; 0        ; 0        ; 20       ; 99       ;
+; ppu_addr_in[12] ; ppu_rd_in       ; 0        ; 0        ; 14       ; 14       ;
+; ppu_rd_in       ; ppu_rd_in       ; 0        ; 0        ; 0        ; 244      ;
++-----------------+-----------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++------------------------------------------------------------------------+
+; Recovery Transfers                                                     ;
++-----------------+----------+----------+----------+----------+----------+
+; From Clock      ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------+----------+----------+----------+----------+----------+
+; m2              ; m2       ; 0        ; 0        ; 0        ; 1        ;
+; ppu_addr_in[12] ; m2       ; 2        ; 2        ; 0        ; 0        ;
+; ppu_rd_in       ; m2       ; 0        ; 0        ; 5        ; 6        ;
++-----------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++------------------------------------------------------------------------+
+; Removal Transfers                                                      ;
++-----------------+----------+----------+----------+----------+----------+
+; From Clock      ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------+----------+----------+----------+----------+----------+
+; m2              ; m2       ; 0        ; 0        ; 0        ; 1        ;
+; ppu_addr_in[12] ; m2       ; 2        ; 2        ; 0        ; 0        ;
+; ppu_rd_in       ; m2       ; 0        ; 0        ; 5        ; 6        ;
++-----------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 40    ; 40   ;
+; Unconstrained Input Port Paths  ; 7064  ; 7064 ;
+; Unconstrained Output Ports      ; 46    ; 46   ;
+; Unconstrained Output Port Paths ; 967   ; 967  ;
++---------------------------------+-------+------+
+
+
++--------------------------------------------------------+
+; Clock Status Summary                                   ;
++-----------------+-----------------+------+-------------+
+; Target          ; Clock           ; Type ; Status      ;
++-----------------+-----------------+------+-------------+
+; m2              ; m2              ; Base ; Constrained ;
+; ppu_addr_in[12] ; ppu_addr_in[12] ; Base ; Constrained ;
+; ppu_rd_in       ; ppu_rd_in       ; Base ; Constrained ;
++-----------------+-----------------+------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                              ;
++-----------------+--------------------------------------------------------------------------------------+
+; Input Port      ; Comment                                                                              ;
++-----------------+--------------------------------------------------------------------------------------+
+; cpu_addr_in[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[4]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[5]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[6]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[7]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[8]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[9]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[10] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[11] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[12] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[13] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[14] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[4]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[5]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[6]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[7]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_rw_in       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; m2              ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[4]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[5]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[6]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[7]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[8]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[9]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[10] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[11] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[12] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[13] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_not_a13     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_rd_in       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_wr_in       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; romsel          ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-----------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                                ;
++-------------------+---------------------------------------------------------------------------------------+
+; Output Port       ; Comment                                                                               ;
++-------------------+---------------------------------------------------------------------------------------+
+; cpu_addr_out[13]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[14]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[15]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[16]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[17]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[18]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[19]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[20]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[21]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[22]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[23]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[24]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[25]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[26]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[3]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[4]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[5]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[6]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[7]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_dir           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; flash_ce          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; flash_oe          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; flash_we          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; irq               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_out[10]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_out[11]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_out[12]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_out[13]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_out[14]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_out[15]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_out[16]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_out[17]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_out[18]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_ciram_a10     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_ciram_ce      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_not_a13       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_rd_out        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_wr_out        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sram_addr_out[13] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sram_addr_out[14] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sram_ce           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sram_oe           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sram_we           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                              ;
++-----------------+--------------------------------------------------------------------------------------+
+; Input Port      ; Comment                                                                              ;
++-----------------+--------------------------------------------------------------------------------------+
+; cpu_addr_in[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[4]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[5]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[6]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[7]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[8]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[9]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[10] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[11] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[12] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[13] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_in[14] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[4]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[5]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[6]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[7]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_rw_in       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; m2              ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[4]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[5]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[6]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[7]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[8]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[9]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[10] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[11] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[12] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_in[13] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_not_a13     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_rd_in       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_wr_in       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; romsel          ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-----------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                                ;
++-------------------+---------------------------------------------------------------------------------------+
+; Output Port       ; Comment                                                                               ;
++-------------------+---------------------------------------------------------------------------------------+
+; cpu_addr_out[13]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[14]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[15]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[16]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[17]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[18]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[19]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[20]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[21]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[22]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[23]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[24]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[25]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_addr_out[26]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[3]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[4]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[5]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[6]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_data_in[7]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpu_dir           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; flash_ce          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; flash_oe          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; flash_we          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; irq               ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_out[10]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_out[11]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_out[12]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_out[13]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_out[14]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_out[15]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_out[16]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_out[17]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_addr_out[18]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_ciram_a10     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_ciram_ce      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_not_a13       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_rd_out        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ppu_wr_out        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sram_addr_out[13] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sram_addr_out[14] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sram_ce           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sram_oe           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sram_we           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+    Info: Processing started: Sun Jan 11 17:56:53 2026
+Info: Command: quartus_sta CoolGirl -c CoolGirl
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'CoolGirl.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name m2 m2
+    Info (332105): create_clock -period 1.000 -name ppu_rd_in ppu_rd_in
+    Info (332105): create_clock -period 1.000 -name ppu_addr_in[12] ppu_addr_in[12]
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -17.582
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -17.582           -6465.865 m2 
+    Info (332119):    -9.783            -161.930 ppu_addr_in[12] 
+    Info (332119):    -7.418            -102.226 ppu_rd_in 
+Info (332146): Worst-case hold slack is 1.078
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.078               0.000 m2 
+    Info (332119):     1.650               0.000 ppu_rd_in 
+    Info (332119):     2.060               0.000 ppu_addr_in[12] 
+Info (332146): Worst-case recovery slack is -4.795
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -4.795              -8.307 m2 
+Info (332146): Worst-case removal slack is 0.339
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.339               0.000 m2 
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 m2 
+    Info (332119):    -2.289              -2.289 ppu_addr_in[12] 
+    Info (332119):    -2.289              -2.289 ppu_rd_in 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4697 megabytes
+    Info: Processing ended: Sun Jan 11 17:56:56 2026
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+
