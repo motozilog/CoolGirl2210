@@ -35,6 +35,14 @@ Due to a factory defect in some EPM2210 chips, EPM2210 may have no output on the
 ## Recommended Soldering Order
 Prepare a Famicom Writer, STM32 or ATmega based is also acceptable
 
+> **Soldering Guide (in Chinese) for the Original CoolGirl**
+>
+> https://www.bilibili.com/opus/993115658548936710
+>
+> *Note: This tutorial is for the original version. CoolGirl2210 requires BGA soldering skills.*
+
+CoolGirl2210 Soldering Order:
+
 1. 3.3V Power Circuit (U19, C50, L1, R50, R51, C52, C51): Solder these components first, then verify that the 3.3V output is correct.
 
 2. EPM2210 (U13): Solder the CPLD.
