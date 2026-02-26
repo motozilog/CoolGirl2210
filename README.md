@@ -5,7 +5,7 @@ Supports ALL COOLGIRL mappers in a single cartridge.
 
 Original COOLGIRL Design:
 
-* [COOLGIRL - ultimate multigame cartridge for Famicom](https://github.com/ClusterM/coolgirl-famicom-multicart)
+* [COOLGIRL - ultimate multigame cartridge for Famicom](https://github.com/ClusterM/coolgirl-famicom-multicart) by Alexey Cluster
 
 ![CoolGirl-2210-top.jpg](CoolGirl-2210-top.jpg)
 
