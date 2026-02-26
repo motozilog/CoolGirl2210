@@ -3,7 +3,12 @@ EPM2210 Variant of the COOLGIRL - Ultimate Multigame Cartridge for the Famicom
 
 Supports ALL COOLGIRL mappers in a single cartridge.
 
-Upgrades:
+Original COOLGIRL Design:
+
+* [COOLGIRL - ultimate multigame cartridge for Famicom](https://github.com/ClusterM/coolgirl-famicom-multicart)
+
+
+##Upgrades:
 
 1. EPM1270 → EPM2210: The upgraded CPLD allows support for ALL COOLGIRL mappers.
 
@@ -25,7 +30,8 @@ Due to a factory defect in some EPM2210 chips, EPM2210 may have no output on the
 **It is strongly recommended to run EPM2210TEST to verify ALL pins after soldering the EPM2210.**
 (Use φ2(M2) as the clock input, located at the D3-LL4148 positive pin.)
 
-Recommended Soldering Order (Prepare a Famicom Writer; STM32 or ATmega based is also acceptable):
+##Recommended Soldering Order
+Prepare a Famicom Writer, STM32 or ATmega based is also acceptable
 
 1. 3.3V Power Circuit (U19, C50, L1, R50, R51, C52, C51): Solder these components first, then verify that the 3.3V output is correct.
 
@@ -42,8 +48,16 @@ Recommended Soldering Order (Prepare a Famicom Writer; STM32 or ATmega based is 
 7. Flash Memory: Solder and program using the famicom-dumper-client with the write-coolgirl command.
 
 
-LCEDA design file,schematic,Gerbers,BOM are /coolgirl-2210-UseCoolGirl_rev6.x/CoolGirl_rev6.x/hardware
+LCEDA/EasyEDA design file,schematic,Gerbers,BOM are /coolgirl-2210-UseCoolGirl_rev6.x/CoolGirl_rev6.x/hardware
 
+##PCB order info:
+* Layers: 4
+* PCB Thickness: 1.2mm
+* Specify Stackup: JLC04121H-3313
+* Impedance Control: No requirement
+* Gold fingers: Yes
+* Beveling: 30°
+* Surface Finish: ENIG(Expensive but recommended)
 
 ![CoolGirl-2210-top.jpg](CoolGirl-2210-top.jpg)
 
@@ -55,6 +69,3 @@ S70GL02 localtion(Expensive, not verify)
 
 ![CoolGirl-2210-top-S70GL02.png](CoolGirl-2210-top-S70GL02.png)
 
-Original COOLGIRL Design:
-
-* [COOLGIRL - ultimate multigame cartridge for Famicom](https://github.com/ClusterM/coolgirl-famicom-multicart)
