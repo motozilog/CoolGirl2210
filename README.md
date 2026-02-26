@@ -5,7 +5,7 @@ Supports ALL COOLGIRL mappers in a single cartridge.
 
 Upgrades:
 
-1. EPM1270 → EPM2210: The upgraded CPLD allows support for ALL mappers.
+1. EPM1270 → EPM2210: The upgraded CPLD allows support for ALL COOLGIRL mappers.
 
 2. 3.3V Power: Switched from an LDO to a DC-DC converter. This allows the cartridge to run on cheaper Famicom clones (e.g., the Subor D99, which uses USB power and only supplies 500mA!).
 
@@ -25,7 +25,24 @@ Due to a factory defect in some EPM2210 chips, EPM2210 may have no output on the
 **It is strongly recommended to run EPM2210TEST to verify ALL pins after soldering the EPM2210.**
 (Use φ2(M2) as the clock input, located at the D3-LL4148 positive pin.)
 
-PCB files and Gerbers are pending, awaiting approval from Alexey Cluster.
+Recommended Soldering Order (Prepare a Famicom Writer; STM32 or ATmega based is also acceptable):
+
+1. 3.3V Power Circuit (U19, C50, L1, R50, R51, C52, C51): Solder these components first, then verify that the 3.3V output is correct.
+
+2. EPM2210 (U13): Solder the CPLD.
+
+3. Initial CPLD Test: Program the EPM2210TEST file into the EPM2210. Temporarily connect a wire from the Clock source to the diode of D3 (LL4148) . Use an oscilloscope to probe all relevant pins to verify the test configuration.
+
+4. CPLD Programming: Program the main firmware (CoolGirl_rev6.x/output_files) into the EPM2210.
+
+5. Reset Circuit, SRAM, and SRAM Level Shifters: Solder these components and verify them using the CoolGirl Test script.
+
+6. CHR-RAM and CHR-RAM Level Shifters: Solder and verify using the CoolGirl Test script.
+
+7. Flash Memory: Solder and program using the famicom-dumper-client with the write-coolgirl command.
+
+
+LCEDA design file,schematic,Gerbers,BOM are /coolgirl-2210-UseCoolGirl_rev6.x/CoolGirl_rev6.x/hardware
 
 
 ![CoolGirl-2210-top.jpg](CoolGirl-2210-top.jpg)
