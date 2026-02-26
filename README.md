@@ -7,8 +7,10 @@ Original COOLGIRL Design:
 
 * [COOLGIRL - ultimate multigame cartridge for Famicom](https://github.com/ClusterM/coolgirl-famicom-multicart)
 
+![CoolGirl-2210-top.jpg](CoolGirl-2210-top.jpg)
 
-##Upgrades:
+
+## Upgrades:
 
 1. EPM1270 → EPM2210: The upgraded CPLD allows support for ALL COOLGIRL mappers.
 
@@ -30,7 +32,7 @@ Due to a factory defect in some EPM2210 chips, EPM2210 may have no output on the
 **It is strongly recommended to run EPM2210TEST to verify ALL pins after soldering the EPM2210.**
 (Use φ2(M2) as the clock input, located at the D3-LL4148 positive pin.)
 
-##Recommended Soldering Order
+## Recommended Soldering Order
 Prepare a Famicom Writer, STM32 or ATmega based is also acceptable
 
 1. 3.3V Power Circuit (U19, C50, L1, R50, R51, C52, C51): Solder these components first, then verify that the 3.3V output is correct.
@@ -47,10 +49,9 @@ Prepare a Famicom Writer, STM32 or ATmega based is also acceptable
 
 7. Flash Memory: Solder and program using the famicom-dumper-client with the write-coolgirl command.
 
-
+## PCB order info:
 LCEDA/EasyEDA design file,schematic,Gerbers,BOM are /coolgirl-2210-UseCoolGirl_rev6.x/CoolGirl_rev6.x/hardware
 
-##PCB order info:
 * Layers: 4
 * PCB Thickness: 1.2mm
 * Specify Stackup: JLC04121H-3313
@@ -59,7 +60,6 @@ LCEDA/EasyEDA design file,schematic,Gerbers,BOM are /coolgirl-2210-UseCoolGirl_r
 * Beveling: 30°
 * Surface Finish: ENIG(Expensive but recommended)
 
-![CoolGirl-2210-top.jpg](CoolGirl-2210-top.jpg)
 
 ![CoolGirl-2210-bottom.jpg](CoolGirl-2210-bottom.jpg)
 
