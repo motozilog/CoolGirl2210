@@ -7,10 +7,10 @@ Original COOLGIRL Design:
 
 * [COOLGIRL - ultimate multigame cartridge for Famicom](https://github.com/ClusterM/coolgirl-famicom-multicart) by Alexey Cluster
 
-![CoolGirl-2210-top.jpg](CoolGirl-2210-top.jpg)
-
 
 ## Upgrades:
+
+![CoolGirl-2210-top.jpg](CoolGirl-2210-top.jpg)
 
 1. EPM1270 → EPM2210: The upgraded CPLD allows support for ALL COOLGIRL mappers.
 
